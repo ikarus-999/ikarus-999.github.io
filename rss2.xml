@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ikarus&#39;s BLOG</title>
+    <link>https://ikarus-999.github.io/</link>
+    
+    <image>
+      <url>https://www.gravatar.com/avatar/5a9f87e79678fa1d3ad8a772986a89a0</url>
+      <title>ikarus&#39;s BLOG</title>
+      <link>https://ikarus-999.github.io/</link>
+    </image>
+    
+    <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>데이터쟁이 이카루스 블로그입니다</description>
+    <pubDate>Sat, 24 Oct 2020 14:29:05 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>fpost2</title>
+      <link>https://ikarus-999.github.io/2020/10/24/fpost2/</link>
+      <guid>https://ikarus-999.github.io/2020/10/24/fpost2/</guid>
+      <pubDate>Sat, 24 Oct 2020 14:08:30 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;머신러닝과-딥러닝의-차이&quot;&gt;&lt;a href=&quot;#머신러닝과-딥러닝의-차이&quot; class=&quot;headerlink&quot; title=&quot;머신러닝과 딥러닝의 차이&quot;&gt;&lt;/a&gt;머신러닝과 딥러닝의 차이&lt;/h2&gt;&lt;h3 id=&quot;머신러닝&quot;&gt;&lt;a href=&quot;#머신러닝&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="머신러닝과-딥러닝의-차이"><a href="#머신러닝과-딥러닝의-차이" class="headerlink" title="머신러닝과 딥러닝의 차이"></a>머신러닝과 딥러닝의 차이</h2><h3 id="머신러닝"><a href="#머신러닝" class="headerlink" title="머신러닝"></a>머신러닝</h3><ol><li>머신러닝은 정형 데이터</li></ol><ul><li>표 형태의 데이터</li></ul><ol start="2"><li>딥러닝은 비정형 데이터</li></ol><ul><li>그림, 사진, 오디오 형태의 자연 데이터</li></ul><h3 id="머신러닝-기초-준비물"><a href="#머신러닝-기초-준비물" class="headerlink" title="머신러닝 기초 준비물"></a>머신러닝 기초 준비물</h3><blockquote><p>충분한 용량(RAM 32GB++, SSD 512GB++, i7-10Gen++)의 데스크탑 권장!</p></blockquote><blockquote><p>가장 먼저 <strong>파이썬</strong>, <strong>텐서플로우</strong> 를 설치합니다.</p><blockquote><p><em>설치 버전 확인!!</em> 매우 중요합니다!</p></blockquote></blockquote><ol><li>파이썬</li><li>텐서플로우</li><li>넘파이 &amp; 싸이킷런</li></ol><blockquote><p>파이썬 버전을 여러개 설치 가능합니다. 이때는 <strong>환경 변수, IDE 경로 셋팅이 중요</strong>합니다.</p><blockquote><p>윈도우라면 CMD보다는 powershell을 쓰는것이 편합니다.</p></blockquote></blockquote><ol start="4"><li>제일 쉬운 방법은 아나콘다🛎… 하지만 용량이 큽니다.</li></ol><blockquote><p>써본 결과 리눅스에 도커가 최적 환경입니다⚙️. 추후 포스팅 예정 입니다.📯</p></blockquote><h3 id="Lets-Burn-the-GPU-🔥🔥🔥-TF2-0-wow"><a href="#Lets-Burn-the-GPU-🔥🔥🔥-TF2-0-wow" class="headerlink" title="Lets Burn the GPU!!🔥🔥🔥(TF2.0 wow!!)"></a>Lets Burn the GPU!!🔥🔥🔥(TF2.0 wow!!)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># tensorflow 실행모드를 확인합니다</span></span><br><span class="line">print(tf.executing_eagerly())</span><br><span class="line"></span><br><span class="line">shape = (<span class="built_in">int</span>(<span class="number">10000</span>), <span class="built_in">int</span>(<span class="number">10000</span>))</span><br><span class="line">startTime = datetime.now()</span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">&quot;/gpu&quot;</span>):</span><br><span class="line">    random_matrix = tf.random.uniform(shape=shape, minval=<span class="number">0</span>, maxval=<span class="number">1</span>)</span><br><span class="line">    dot_operation = tf.matmul(random_matrix, tf.transpose(random_matrix))</span><br><span class="line">    sum_operation = tf.reduce_sum(dot_operation)</span><br><span class="line"></span><br><span class="line">result = sum_operation</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;\n&quot;</span> * <span class="number">2</span>)</span><br><span class="line">print(<span class="string">&quot;Time taken:&quot;</span>, datetime.now() - startTime)</span><br><span class="line">print(<span class="string">&quot;\n&quot;</span> * <span class="number">2</span>)</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/10/24/fpost2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>firstpost1</title>
+      <link>https://ikarus-999.github.io/2020/10/24/firstpost1/</link>
+      <guid>https://ikarus-999.github.io/2020/10/24/firstpost1/</guid>
+      <pubDate>Sat, 24 Oct 2020 13:42:28 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;HEXO-블로그-설치와-사용법&quot;&gt;&lt;a href=&quot;#HEXO-블로그-설치와-사용법&quot; class=&quot;headerlink&quot; title=&quot;HEXO 블로그 설치와 사용법&quot;&gt;&lt;/a&gt;HEXO 블로그 설치와 사용법&lt;/h2&gt;&lt;h3 id=&quot;새-글-쓰는-법&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="HEXO-블로그-설치와-사용법"><a href="#HEXO-블로그-설치와-사용법" class="headerlink" title="HEXO 블로그 설치와 사용법"></a>HEXO 블로그 설치와 사용법</h2><h3 id="새-글-쓰는-법"><a href="#새-글-쓰는-법" class="headerlink" title="새 글 쓰는 법"></a>새 글 쓰는 법</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [레이아웃이름] <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>레이아웃 디폴트(바로 발행) : post</p><p>바로 발행되지 않는 글 : draft</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>으로 draft에서 publish 합니다.</p><blockquote><p>추후 포스트 예정입니다.</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/GitPage/">GitPage</category>
+      
+      <category domain="https://ikarus-999.github.io/categories/GitPage/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/HEXO/">HEXO</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/blog/">blog</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/10/24/firstpost1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://ikarus-999.github.io/2020/10/24/hello-world/</link>
+      <guid>https://ikarus-999.github.io/2020/10/24/hello-world/</guid>
+      <pubDate>Sat, 24 Oct 2020 11:12:41 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://ikarus-999.github.io/2020/10/24/hello-world/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
