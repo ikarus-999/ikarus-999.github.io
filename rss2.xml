@@ -15,7 +15,7 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Sun, 25 Oct 2020 15:20:20 GMT</pubDate>
+    <pubDate>Sun, 25 Oct 2020 15:30:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -51,14 +51,12 @@ We live in the tragedy! 유명한 비극과 같은
       
       <category domain="https://ikarus-999.github.io/categories/ilsang/">ilsang</category>
       
-      <category domain="https://ikarus-999.github.io/categories/ilsang/music/">music</category>
+      <category domain="https://ikarus-999.github.io/categories/ilsang/Music/">Music</category>
       
       
-      <category domain="https://ikarus-999.github.io/tags/ilsang/">ilsang</category>
+      <category domain="https://ikarus-999.github.io/tags/Music-EDA/">Music EDA</category>
       
-      <category domain="https://ikarus-999.github.io/tags/music/">music</category>
-      
-      <category domain="https://ikarus-999.github.io/tags/jebal-dwe/">jebal_dwe</category>
+      <category domain="https://ikarus-999.github.io/tags/Script/">Script</category>
       
       
       <comments>https://ikarus-999.github.io/2020/10/26/fpost3/#disqus_thread</comments>
