@@ -15,8 +15,52 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Sun, 25 Oct 2020 15:30:33 GMT</pubDate>
+    <pubDate>Tue, 17 Nov 2020 10:57:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>training_pc</title>
+      <link>https://ikarus-999.github.io/2020/11/16/training-pc/</link>
+      <guid>https://ikarus-999.github.io/2020/11/16/training-pc/</guid>
+      <pubDate>Sun, 15 Nov 2020 17:00:28 GMT</pubDate>
+      
+      <description>딥러닝 공부 후기
+비정형 데이터를 다룰려면 GPU는 필수다.
+
+Why GPU ??
+ 1. CPU보다 더 빠른 병렬 처리 가능
+
+ *  행렬곱 계산이 CPU보다 훨씬 빠름
+
+ 2. 계산 그래프 빌드, 처리 속도가 빠름.
+
+ * 비정형 데이터 처리엔 GPU가 필수
+
+음성 딥러닝, 나도 해볼까?
+음성 딥러닝
+
+음성 딥러닝은 결코 쉽지 않다. 딥러닝계의 보스급.
+신호처리 배워야 그나마 수월하다.
+초반 Feature Extraction 경험을 쌓는것을 권장한다.
+RNN계열의 LSTM으로 시작. 하지만,
+Attention, Transforme</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-공부-후기"><a href="#딥러닝-공부-후기" class="headerlink" title="딥러닝 공부 후기"></a>딥러닝 공부 후기</h2><blockquote><p>비정형 데이터를 다룰려면 GPU는 필수다.</p></blockquote><h3 id="Why-GPU"><a href="#Why-GPU" class="headerlink" title="Why GPU ??"></a>Why GPU ??</h3><ol><li>CPU보다 더 빠른 병렬 처리 가능</li></ol><ul><li> 행렬곱 계산이 CPU보다 훨씬 빠름</li></ul><ol start="2"><li>계산 그래프 빌드, 처리 속도가 빠름.</li></ol><ul><li>비정형 데이터 처리엔 GPU가 필수</li></ul><h3 id="음성-딥러닝-나도-해볼까"><a href="#음성-딥러닝-나도-해볼까" class="headerlink" title="음성 딥러닝, 나도 해볼까?"></a>음성 딥러닝, 나도 해볼까?</h3><p><a href="https://github.com/topics/vggish">음성 딥러닝</a></p><p>음성 딥러닝은 결코 쉽지 않다. 딥러닝계의 보스급.<br>신호처리 배워야 그나마 수월하다.<br>초반 Feature Extraction 경험을 쌓는것을 권장한다.<br>RNN계열의 LSTM으로 시작. 하지만,<br>Attention, Transformer 날코딩 등 논문 구현 경험이 매우 중요하다.<br>Mel Spectrogram을 한다 해도 원리를 잘 알아야 나중에 모델링과 데이터 분해가 쉽다.</p><h3 id="딥러닝-입문-방법"><a href="#딥러닝-입문-방법" class="headerlink" title="딥러닝 입문 방법"></a>딥러닝 입문 방법</h3><p>딥러닝 입문 하려면 수학은 필수. 정말 중요.</p><p><a href="https://paperswithcode.com/">논문 구현 시도해보기1</a><br><a href="https://arxiv.org/abs/1706.03762">논문 구현 시도해보기2</a></p><blockquote><p>어떤 논문에는 <em>파라미터 하나도 없는</em> 것도 있다.<br>레이어 구조도만 있고 파라미터가 없는 것은 진짜 구현난이도 보스급.</p></blockquote><h3 id="딥러닝-자격증-취득-후기"><a href="#딥러닝-자격증-취득-후기" class="headerlink" title="딥러닝 자격증 취득 후기"></a>딥러닝 자격증 취득 후기</h3><p>이것이 바로 딥러닝 자격증!!<br><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/25378511," alt="우와~" title="WoW!"></p><ol><li>문제 유형</li></ol><ul><li><p>Category 1: Basic model</p></li><li><p>Category 2: Model from learning dataset</p></li><li><p>Category 3: Image classification<br>Convolutional Neural Network with real-world image dataset</p></li><li><p>Category 4: Natural language processing (NLP)<br>NLP Text Classification with real-world text dataset</p></li><li><p>Category 5: Time series, sequences and predictions<br>Sequence Model with real-world numeric dataset</p></li><li><p>이 시험은 응시자가 TensorFlow 2.x를 통해 모델을 빌드하여 문제를 해결할 수 있는지<br>테스트합니다.</p></li><li><p>머신러닝(ML) 및 딥러닝의 기본 원칙</p></li><li><p>TensorFlow 2.x에서 ML 모델 개발하기</p></li><li><p>심층신경망 및 합성곱 신경망(CNN)을 통한 이미지 인식, 객체 탐지, 텍스트 인식 알고리즘 빌드</p></li><li><p>컴퓨터가 정보를 ‘보는’ 방식과 플롯 손실 및 정확도 이해할 수 있도록 다른 크기 및 형태의 실제 이미지를 활용하여 합성곱에서 이미지의 경로를 시각화</p></li><li><p>과적합을 예방하기 위한 확장 및 드롭아웃과 같은 전략 탐색</p></li><li><p>TensorFlow를 이용하여 자연어 처리 문제를 해결하기 위해 신경망 적용</p></li></ul><blockquote><p>Google 공식 페이지 발췌</p></blockquote><ol start="2"><li>합격 점수 / 규칙</li></ol><blockquote><p>허용된 인터넷 브라우징은 Tensorflow document, 총 100점 만점에 90점 커트라인</p></blockquote><ul><li>난이도는 category 5가 가장 높음</li></ul><blockquote><p>시험 시간 : 5시간 (컴퓨터 딥러닝 훈련시간 포함)</p></blockquote><ol start="3"><li>따면 좋은 점</li></ol><p>개발자 네트워크에 join 할 수가 있어요~</p><p><a href="https://www.tensorflow.org/certificate-network?hl=ko">자격증 네트워크</a></p><p><a href="https://github.com/Hvass-Labs/TensorFlow-Tutorials">참고문서</a></p><p>그럼 20000~!</p>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/16/training-pc/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>fpost3</title>
@@ -137,11 +181,12 @@ $ hexo publish &quot;새 포스트이름&quot;
 
 으로 draft에서 publish 합니다.
 
-추후 포스트 예정입니다.</description>
+publish는 잘 쓰지 않는다 파일명 에러나기 때문. 그냥
+냅다 MarkDown으로 쓰고 hexo g -d로 해버림</description>
       
       
       
-      <content:encoded><![CDATA[<h2 id="HEXO-블로그-설치와-사용법"><a href="#HEXO-블로그-설치와-사용법" class="headerlink" title="HEXO 블로그 설치와 사용법"></a>HEXO 블로그 설치와 사용법</h2><h3 id="새-글-쓰는-법"><a href="#새-글-쓰는-법" class="headerlink" title="새 글 쓰는 법"></a>새 글 쓰는 법</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [레이아웃이름] <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>레이아웃 디폴트(바로 발행) : post</p><p>바로 발행되지 않는 글 : draft</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>으로 draft에서 publish 합니다.</p><blockquote><p>추후 포스트 예정입니다.</p></blockquote>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="HEXO-블로그-설치와-사용법"><a href="#HEXO-블로그-설치와-사용법" class="headerlink" title="HEXO 블로그 설치와 사용법"></a>HEXO 블로그 설치와 사용법</h2><h3 id="새-글-쓰는-법"><a href="#새-글-쓰는-법" class="headerlink" title="새 글 쓰는 법"></a>새 글 쓰는 법</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [레이아웃이름] <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>레이아웃 디폴트(바로 발행) : post</p><p>바로 발행되지 않는 글 : draft</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>으로 draft에서 publish 합니다.</p><blockquote><p>publish는 잘 쓰지 않는다 파일명 에러나기 때문. 그냥<br>냅다 MarkDown으로 쓰고 hexo g -d로 해버림</p></blockquote>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/GitPage/">GitPage</category>
