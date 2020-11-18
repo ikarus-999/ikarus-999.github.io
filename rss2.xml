@@ -15,8 +15,45 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Tue, 17 Nov 2020 10:57:55 GMT</pubDate>
+    <pubDate>Wed, 18 Nov 2020 12:56:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>GAN프로젝트_try</title>
+      <link>https://ikarus-999.github.io/2020/11/17/GAN%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-try/</link>
+      <guid>https://ikarus-999.github.io/2020/11/17/GAN%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-try/</guid>
+      <pubDate>Tue, 17 Nov 2020 12:28:07 GMT</pubDate>
+      
+      <description>Style GAN toy 프로젝트
+StyleGAN의 특징
+ 1. 이미지를 Style의 조합으로 보고
+    Generator의 각 Layer마다 Style 정보를 입히는 방식으로 이미지 합성
+    이 때 각 Layer에서 추가되는 Style은 이미지의 Coarse Feature(포즈, 성별 등)부터
+    Fine Detail(머리색, 피부톤 등)까지
+    각기 다른 Level의 Visual 속성들을 조절 가능
+    StyleGAN은 생각보다 안정적이고 높은 퀄리티의 이미지 생성 
+    
+    
+ 2. 네트워크 구조(Mod</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Style-GAN-toy-프로젝트"><a href="#Style-GAN-toy-프로젝트" class="headerlink" title="Style GAN toy 프로젝트"></a>Style GAN toy 프로젝트</h2><h3 id="StyleGAN의-특징"><a href="#StyleGAN의-특징" class="headerlink" title="StyleGAN의 특징"></a>StyleGAN의 특징</h3><ol><li><p>이미지를 Style의 조합으로 보고<br>Generator의 각 Layer마다 Style 정보를 입히는 방식으로 이미지 합성<br>이 때 각 Layer에서 추가되는 Style은 이미지의 Coarse Feature(포즈, 성별 등)부터<br>Fine Detail(머리색, 피부톤 등)까지<br>각기 다른 Level의 Visual 속성들을 조절 가능<br>StyleGAN은 생각보다 안정적이고 높은 퀄리티의 이미지 생성  </p></li><li><p>네트워크 구조(Module)<br>GAN이란 어떤 것일까???<br><img src="/post_imgs/GANdesc.png" alt="이것이 GAN"></p></li></ol><p><img src="/post_imgs/slide21.PNG" alt="GAN model"></p><ul><li>Instance Norm?<br><img src="/post_imgs/slide22.PNG" alt="Instance Norm"></li></ul><p><img src="/post_imgs/slide23.PNG" alt="Instance Norm2"></p><ul><li>Generator 구조 설명</li></ul><p><img src="/post_imgs/slide322.png" alt="model"></p><p>왼쪽이 Traditional Network, 오른쪽이 이 논문에서 제안한 Style-gased Generator. </p><p>왼쪽 네트워크와 오른쪽에 Synthesis Network가 똑같은 구조를 갖고 있지만,<br>이전 GAN에서는 Latent z를 바로 Input으로 넣어줬던 것과는 다르게,<br>StyleGAN에서는 학습된 Constant, (w) 값을 입력으로 사용함. </p><p>새롭게 Mapping Network와 Noise가 추가됨..</p><p>W를 Feature에 매핑하는 경우<br>W는 Z처럼 고정된 분포를 따르지 않음. </p><p>Sampling density는 학습된 Piecewise Continuous Mapping f(z)<br>(f는 Mapping Network 입니다)에 의해 정해짐. </p><p>따라서, Warping(틀어짐)이 많이 일어나지 않음.<br>그렇기 때문에 Factors of variation은 더욱 Linear하고, Disentangled (얽히지 않음).<br>이것이 바로 z를 곧바로 Feature에 매핑하는 것보다 w에 매핑하는 것의 장점입니다</p><p>기존의 Generator (a)는<br>Input Latent Vector (z)가 직접 Convolution, Upsampling 등을 거쳐 이미지로 변환되는 구조. </p><p>Style-based Generator (b) 의 경우,<br>(z)가  Fully-connected Layer로 구성된 Mapping Network을 거쳐<br>Intermediate Latent Vector (w) 먼저 변환. </p><p>(w)는 Constant Tensor가 이미지로 변환되는 과정에서<br>스타일을 입히는 역할을 수행.</p><p>다양한 스타일의 이미지를 생성.</p><ul><li>Style Transfer를 실시간으로 가능케하는 Adaptive Instance Norm</li></ul><p>Synthesis Network (합성 네트워크)<br>z를 중간 latent space W에 매핑을 한 뒤에 이 w는 “A”를 거쳐서 style, y=(ys,yb)<br>로 변형됨. 이때 A는 학습된 affine transform 임. 그리고 이 style들은<br>AdaIN(adaptive instance normalization) opeartion을 control 함.<br><img src="/post_imgs/Adain.png" alt="AdaIN"></p><p>AdaIN은 style transfer를 할 때 많이 쓰이는 방법으로, 임의의 style transfer를 실시간으로 가능하게 함.<br>여기서 feature map xi는<br>normalized 된 다음에, style로 변환된 두 y로 scaled, biased 됨. (style이 입혀짐)<br>이 과정을 매 layer 마다 반복함. 그리고 이러한 방법은 scale-specific control 을 가능하게 함.</p><blockquote><p>이후 포스팅 계속됩니다…</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/GAN/">GAN</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/17/GAN%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-try/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>training_pc</title>
