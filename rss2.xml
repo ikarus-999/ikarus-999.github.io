@@ -15,8 +15,164 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Wed, 18 Nov 2020 13:12:23 GMT</pubDate>
+    <pubDate>Sun, 22 Nov 2020 11:07:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>TF2</title>
+      <link>https://ikarus-999.github.io/2020/11/22/TF2/</link>
+      <guid>https://ikarus-999.github.io/2020/11/22/TF2/</guid>
+      <pubDate>Sun, 22 Nov 2020 10:56:34 GMT</pubDate>
+      
+      <description>Tensorflow 2.x 사용법
+Tensor 생성
+ * tf.constant() : list, tuple, Array 를 Tensor로 바꿈
+   
+   
+ * tensor = tf.constant(arr)
+   
+   
+ * tensor.dtype : 데이터 타입 확인
+   
+   
+ * tf.cast(tensor, dtype=tf.uint8) : TF int8로 데이터타입 바꾸기
+   
+   
+   
+ * tensor.numpy() : numpy array로 바꾸기
+   
+   
+
+Tensor에 랜덤한 숫자들 생성
+ * num</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Tensorflow-2-x-사용법"><a href="#Tensorflow-2-x-사용법" class="headerlink" title="Tensorflow 2.x 사용법"></a>Tensorflow 2.x 사용법</h2><h3 id="Tensor-생성"><a href="#Tensor-생성" class="headerlink" title="Tensor 생성"></a>Tensor 생성</h3><ul><li><p>tf.constant() : list, tuple, Array 를 Tensor로 바꿈</p></li><li><p>tensor = tf.constant(arr)</p></li><li><p>tensor.dtype : 데이터 타입 확인</p></li><li><p>tf.cast(tensor, dtype=tf.uint8) : TF int8로 데이터타입 바꾸기<br><img src="/2020/11/22/TF2/lect_2.PNG" alt="cast사용법"></p></li><li><p>tensor.numpy() : numpy array로 바꾸기</p></li></ul><h3 id="Tensor에-랜덤한-숫자들-생성"><a href="#Tensor에-랜덤한-숫자들-생성" class="headerlink" title="Tensor에 랜덤한 숫자들 생성"></a>Tensor에 랜덤한 숫자들 생성</h3><ul><li>numpy에서는 기본적인 normal distribution 생성<br>np.random.randn(9) : 9개의 불연속적이며 일정한 분포 난수 생성</li></ul><p>Distribution에 따른 난수 생성</p><ul><li><p>tf.random.normal<br>중심극한 이론에 의한 연속적인 모양</p></li><li><p>tf.random.uniform<br>불연속적이며 일정한 분포</p></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/Tensorflow2/">Tensorflow2</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/TF2/">TF2</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/22/TF2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>딥러닝 입문과 준비2</title>
+      <link>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%842/</link>
+      <guid>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%842/</guid>
+      <pubDate>Sun, 22 Nov 2020 10:44:36 GMT</pubDate>
+      
+      <description>딥러닝 시작해보기-2
+Broadcast
+두개의 행렬 shape가 서로 달라도
+한쪽의 차원이 같거나, 연산하는 값이 한 개일때
+shape에 맞게 복사해서 연산함
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+
+arr = np.arange(6).reshape(-1, 3)
+# [[0, 1, 2], 
+#  [3, 4, 5]]
+
+arr + 3
+# [[3, 4, 5],
+#  [6, 7, 8]]
+
+arr * 3
+# [[0, 3, 6],
+#  [9, 12 15]
+
+arr + np.array([</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-시작해보기-2"><a href="#딥러닝-시작해보기-2" class="headerlink" title="딥러닝 시작해보기-2"></a>딥러닝 시작해보기-2</h2><h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><p>두개의 행렬 shape가 서로 달라도<br>한쪽의 차원이 같거나, 연산하는 값이 한 개일때<br>shape에 맞게 복사해서 연산함</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">arr = np.arange(<span class="number">6</span>).reshape(<span class="number">-1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># [[0, 1, 2], </span></span><br><span class="line"><span class="comment">#  [3, 4, 5]]</span></span><br><span class="line"></span><br><span class="line">arr + <span class="number">3</span></span><br><span class="line"><span class="comment"># [[3, 4, 5],</span></span><br><span class="line"><span class="comment">#  [6, 7, 8]]</span></span><br><span class="line"></span><br><span class="line">arr * <span class="number">3</span></span><br><span class="line"><span class="comment"># [[0, 3, 6],</span></span><br><span class="line"><span class="comment">#  [9, 12 15]</span></span><br><span class="line"></span><br><span class="line">arr + np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="comment"># [[1, 3, 5],</span></span><br><span class="line"><span class="comment">#  [4, 6, 8]]</span></span><br><span class="line"></span><br><span class="line">np.add(arr, <span class="number">1</span>)</span><br><span class="line"><span class="comment"># 모든 원소에 1을 더함</span></span><br><span class="line"></span><br><span class="line">np.multiply(arr, <span class="number">3</span>)</span><br><span class="line"><span class="comment"># 모든 원소에 3을 곱함</span></span><br></pre></td></tr></table></figure><h3 id="argmax-argmin"><a href="#argmax-argmin" class="headerlink" title="argmax, argmin"></a>argmax, argmin</h3><p> 배열의 큰 값이나 작은 값의 index return<br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([<span class="number">1</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">54</span>, <span class="number">3</span>, <span class="number">2</span>])</span><br><span class="line">np.argmax(arr) <span class="comment"># 54</span></span><br><span class="line">np.argmin(arr) <span class="comment"># 1</span></span><br><span class="line">np.unique(arr) <span class="comment"># 유일한 값 출력</span></span><br></pre></td></tr></table></figure></p>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%842/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>딥러닝 입문과 준비</title>
+      <link>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%84/</link>
+      <guid>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%84/</guid>
+      <pubDate>Sun, 22 Nov 2020 09:45:13 GMT</pubDate>
+      
+      <description>딥러닝 시작해보기
+Tensor 이해하기
+ 1. 차원
+    
+     * 0차원(상수) : Scalar값
+     * 1차원(리스트 씌운 상수), 2차원(2d), 3차원(3d), 4차원(4-d), n차원(n-d) : Tensor
+     * Numpy로 Tensor 표현과 응용이 가능
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    
+    
+    import numpy as np
+    arr = np.array([[3, 6, 9], [2, 4, 8]])
+    print(arr.dtype) # </description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-시작해보기"><a href="#딥러닝-시작해보기" class="headerlink" title="딥러닝 시작해보기"></a>딥러닝 시작해보기</h2><h3 id="Tensor-이해하기"><a href="#Tensor-이해하기" class="headerlink" title="Tensor 이해하기"></a>Tensor 이해하기</h3><ol><li><p>차원</p><ul><li>0차원(상수) : Scalar값</li><li>1차원(리스트 씌운 상수), 2차원(2d), 3차원(3d), 4차원(4-d), n차원(n-d) : Tensor</li><li>Numpy로 Tensor 표현과 응용이 가능</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.array([[<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>]])</span><br><span class="line">print(arr.dtype) <span class="comment"># dtype(&#x27;float64&#x27;)</span></span><br><span class="line">print(arr.shape) <span class="comment"># (2, 3)</span></span><br><span class="line">print(arr.size) <span class="comment"># 2 * 3 = 6</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li><li><p>차원 늘리기와 줄이기</p><ul><li><p>reshape, -1 활용</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.reshape(<span class="number">-1</span>) <span class="comment"># 1차원으로 펼치기</span></span><br><span class="line">arr.reshape(<span class="number">-1</span>, <span class="number">3</span>) <span class="comment"># 첫번째 차원은 알아서, 두번째 차원은 shape 3</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li><li><p>Ravel() : arr의 차원을 1로 바꿈(==&gt; Flatten)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]) <span class="comment"># (2, 3)</span></span><br><span class="line">arr.ravel()</span><br><span class="line">arr.shape <span class="comment">#(6, )</span></span><br></pre></td></tr></table></figure></li><li><p>np.expand_dims() : 값을 유지하고 차원만 늘릴때</p></li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr = np.expand_dims(arr, <span class="number">-1</span>) <span class="comment">#(6, 1)</span></span><br><span class="line">arr.shape</span><br></pre></td></tr></table></figure><ul><li>numpy array를 빠르게 채우는 방법!</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0으로 채우기</span></span><br><span class="line">arr2 = np.zeros([<span class="number">3</span>, <span class="number">4</span>]) <span class="comment"># 3 * 4의 0이 채워진 배열</span></span><br><span class="line">one2 = np.ones([<span class="number">3</span>, <span class="number">4</span>]) <span class="comment"># 3 * 4의 1로 채워진 배열</span></span><br><span class="line"></span><br><span class="line">five2 = np.ones([<span class="number">3</span>, <span class="number">4</span>]) * <span class="number">5</span> <span class="comment"># 1로 채운 값에 5를 다 곱함</span></span><br><span class="line">arr2 = np.arange(n, m) <span class="comment"># n ~ m-1까지의  수로 배열 채우기</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># array([n ~ m-1])</span></span><br><span class="line">arr = np.arange(<span class="number">5</span>, <span class="number">11</span>).reshape(<span class="number">2</span>, <span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">arr <span class="comment"># array([5, 6, 7]</span></span><br><span class="line">    <span class="comment">#       [8, 9, 10])</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><ul><li>모양이 맞지 않으면 Error…<br><img src="/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%84/lect_1.PNG," alt="모양다름" title="모양이 달라서 이렇게 됨"></li></ul></li><li><p>Index &amp; slicing</p></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 리스트 인덱스 &amp; 슬라이싱</span></span><br><span class="line"></span><br><span class="line">nums = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">nums[:<span class="number">-1</span>] <span class="comment"># 마지막 숫자 전까지 표시</span></span><br><span class="line"></span><br><span class="line">nums[::<span class="number">-1</span>] <span class="comment"># 리스트 안의 숫자를 거꾸로 표현</span></span><br><span class="line"></span><br><span class="line">nums = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">print(nums[<span class="number">0</span>][<span class="number">1</span>]) = <span class="number">2</span> <span class="comment"># 첫번째 리스트 안의 인덱스가 1인 숫자</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">arr = np.array([<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>], [<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>])</span><br><span class="line">print(arr[<span class="number">1</span>, <span class="number">2</span>]) <span class="comment"># 10 --&gt; 인덱싱 [행, 열]</span></span><br><span class="line"></span><br><span class="line">print(arr[<span class="number">1</span>:, <span class="number">1</span>:]) <span class="comment"># [[9, 10]]</span></span><br></pre></td></tr></table></figure><ol start="4"><li>Boolean Indexing<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = np.random.randn(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">print(data&lt;=<span class="number">0</span>) <span class="comment"># False, True로 나옴</span></span><br><span class="line"></span><br><span class="line">data[data &lt;=<span class="number">0</span>] = <span class="number">1</span> <span class="comment"># 0 이하인 것을 1로 채우다</span></span><br></pre></td></tr></table></figure></li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/22/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%84/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>GAN프로젝트_try</title>
