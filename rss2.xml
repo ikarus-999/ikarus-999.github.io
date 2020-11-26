@@ -15,8 +15,44 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Wed, 25 Nov 2020 12:09:04 GMT</pubDate>
+    <pubDate>Thu, 26 Nov 2020 13:27:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>딥러닝-입문과-준비5</title>
+      <link>https://ikarus-999.github.io/2020/11/25/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%845/</link>
+      <guid>https://ikarus-999.github.io/2020/11/25/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%845/</guid>
+      <pubDate>Wed, 25 Nov 2020 12:49:48 GMT</pubDate>
+      
+      <description>딥러닝 시작해보기-5
+선형대수 배워보기(행렬을 아무리 곱하고 더해도 선모양)
+Scala : 크기만 존재하는 양
+Vector : 속도, 위치이동, 힘, 공간뒤틀림과 같이 크기와 방향이 모두 존재하는 양
+
+
+Norm ? n차원 벡터 $$\vec{x} = (x_1, x_2, \cdots x_n)$$
+Norm $$\lVert x \rVert = \sqrt{x_1^1 + x_2^2 + \cdots + x_n^2}$$
+
+“원점 O에서 점\(x_1, x_2, \cdots, x_n\) 까지의 거리”
+
+내적 ? Inner product, Dot p</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-시작해보기-5"><a href="#딥러닝-시작해보기-5" class="headerlink" title="딥러닝 시작해보기-5"></a>딥러닝 시작해보기-5</h2><h3 id="선형대수-배워보기-행렬을-아무리-곱하고-더해도-선모양"><a href="#선형대수-배워보기-행렬을-아무리-곱하고-더해도-선모양" class="headerlink" title="선형대수 배워보기(행렬을 아무리 곱하고 더해도 선모양)"></a>선형대수 배워보기(행렬을 아무리 곱하고 더해도 선모양)</h3><h4 id="Scala-크기만-존재하는-양"><a href="#Scala-크기만-존재하는-양" class="headerlink" title="Scala : 크기만 존재하는 양"></a>Scala : 크기만 존재하는 양</h4><h4 id="Vector-속도-위치이동-힘-공간뒤틀림과-같이-크기와-방향이-모두-존재하는-양"><a href="#Vector-속도-위치이동-힘-공간뒤틀림과-같이-크기와-방향이-모두-존재하는-양" class="headerlink" title="Vector : 속도, 위치이동, 힘, 공간뒤틀림과 같이 크기와 방향이 모두 존재하는 양"></a>Vector : 속도, 위치이동, 힘, 공간뒤틀림과 같이 크기와 방향이 모두 존재하는 양</h4><p><img src="/2020/11/25/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%845/slido51_1.PNG" alt="스칼라와벡터"></p><h4 id="Norm-n차원-벡터-vec-x-x-1-x-2-cdots-x-n"><a href="#Norm-n차원-벡터-vec-x-x-1-x-2-cdots-x-n" class="headerlink" title="Norm ? n차원 벡터 $$\vec{x} = (x_1, x_2, \cdots x_n)$$"></a>Norm ? n차원 벡터 $$\vec{x} = (x_1, x_2, \cdots x_n)$$</h4><p>Norm $$\lVert x \rVert = \sqrt{x_1^1 + x_2^2 + \cdots + x_n^2}$$</p><blockquote><p>“원점 O에서 점\(x_1, x_2, \cdots, x_n\) 까지의 거리”</p></blockquote><h4 id="내적-Inner-product-Dot-product"><a href="#내적-Inner-product-Dot-product" class="headerlink" title="내적 ?  Inner product, Dot product"></a>내적 ?  Inner product, Dot product</h4><h4 id="행렬끼리-곱할-때는-차원을-주의한다"><a href="#행렬끼리-곱할-때는-차원을-주의한다" class="headerlink" title="행렬끼리 곱할 때는 차원을 주의한다."></a>행렬끼리 곱할 때는 차원을 주의한다.</h4><blockquote><p>A(m, n) * B(n, m) 만 가능</p></blockquote><h4 id="Transpose-전치행렬-행과-열을-뒤바꿈"><a href="#Transpose-전치행렬-행과-열을-뒤바꿈" class="headerlink" title="Transpose: 전치행렬(행과 열을 뒤바꿈)"></a>Transpose: 전치행렬(행과 열을 뒤바꿈)</h4><blockquote><p>A.T</p></blockquote><h3 id="numpy-연산-Element-wise-operation"><a href="#numpy-연산-Element-wise-operation" class="headerlink" title="numpy 연산(Element-wise operation)"></a>numpy 연산(Element-wise operation)</h3><blockquote><p>np.dot(x, y) (aka 내적, dot-product)와  x * y(element-wise)는 서로 다름.</p></blockquote><h3 id="numpy-비교-논리연산-element-wise-operation"><a href="#numpy-비교-논리연산-element-wise-operation" class="headerlink" title="numpy 비교, 논리연산(element-wise operation)"></a>numpy 비교, 논리연산(element-wise operation)</h3><h3 id="numpy-Reductions"><a href="#numpy-Reductions" class="headerlink" title="numpy Reductions"></a>numpy Reductions</h3><blockquote><p>argmax() : 최대값있는 인덱스를 리턴, argmin() : 최소값의 인덱스 리턴</p></blockquote><h3 id="np-all-np-any"><a href="#np-all-np-any" class="headerlink" title="np.all, np.any?"></a>np.all, np.any?</h3><blockquote><p>ALL : Array내 모든 값이 TRUE인가?<br>  any : Array내 값이 하나라도 TRUE인가?</p></blockquote><h3 id="np-mean-np-median-np-std-등-통계함수-사용-가능"><a href="#np-mean-np-median-np-std-등-통계함수-사용-가능" class="headerlink" title="np.mean, np.median, np.std 등 통계함수 사용 가능"></a>np.mean, np.median, np.std 등 통계함수 사용 가능</h3>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/Linear-Algebra/">Linear Algebra</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/25/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%845/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>딥러닝-입문과-준비4</title>
