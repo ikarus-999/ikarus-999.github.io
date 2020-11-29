@@ -15,8 +15,169 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Sat, 28 Nov 2020 07:40:16 GMT</pubDate>
+    <pubDate>Sun, 29 Nov 2020 19:47:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>딥러닝-입문과-준비7</title>
+      <link>https://ikarus-999.github.io/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/</link>
+      <guid>https://ikarus-999.github.io/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/</guid>
+      <pubDate>Sun, 29 Nov 2020 17:54:54 GMT</pubDate>
+      
+      <description>딥러닝 시작해보기-7
+합성곱(Convolution)
+ Convolution?
+
+
+ 정의
+합성곱 연산은 두 함수 f, g 가운데 하나의 함수를 반전(reverse), 전이(shift)시킨 다음, 다른 하나의 함수와 곱한 결과를 적분하는 것을 의미한다. 이를 수학 기호로 표시하면 다음과 같다.
+
+ {\displaystyle (fg)(t)=\int _{-\infty }^{\infty }f(\tau )g(t-\tau ),d\tau }(fg)(t)=\int _^{\infty }f(\tau )g(t-\tau ),d\tau
+또한 g 함수 대신에</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-시작해보기-7"><a href="#딥러닝-시작해보기-7" class="headerlink" title="딥러닝 시작해보기-7"></a>딥러닝 시작해보기-7</h2><h3 id="합성곱-Convolution"><a href="#합성곱-Convolution" class="headerlink" title="합성곱(Convolution)"></a>합성곱(Convolution)</h3><p>  Convolution?<br>  <img src="/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/conv_1.png" alt="conv">  </p><p>  <strong>정의</strong><br>  합성곱 연산은 두 함수 f, g 가운데 하나의 함수를 반전(reverse), 전이(shift)시킨 다음, 다른 하나의 함수와 곱한 결과를 적분하는 것을 의미한다. 이를 수학 기호로 표시하면 다음과 같다.</p><p>  {\displaystyle (f<em>g)(t)=\int _{-\infty }^{\infty }f(\tau )g(t-\tau ),d\tau }(f</em>g)(t)=\int _^{\infty }f(\tau )g(t-\tau ),d\tau<br>  또한 g 함수 대신에 f 함수를 반전, 전이 시키는 경우 다음과 같이 표시할 수도 있다. 이 두 연산은 형태는 다르지만 같은 결과값을 갖는다.</p><p>  {\displaystyle (f<em>g)(t)=\int _{-\infty }^{\infty }f(t-\tau )g(\tau ),d\tau }(f</em>g)(t)=\int _^{\infty }f(t-\tau )g(\tau ),d\tau<br>  위의 적분에서 적분 구간은 함수 f와 g가 정의된 범위에 따라서 달라진다.</p><p>  또한 두 확률 변수 X와 Y가 있을 때 각각의 확률 밀도 함수를 f와 g라고 하면, X+Y의 확률 밀도 함수는 {\displaystyle f<em>g,}f</em>g,로 표시할 수 있다.</p><blockquote><p>무엇인지 모르겠죠? 쉽게 말하자면<br>  기존 MLP에서는 이미지가 살짝이라도 회전이 되거나 위치 이동이 있다면 신경망 자체를 다시 학습해야 하지만<br>  CNN은 이미지의 변화가 있어도 재학습 없어도 가능함.</p></blockquote><p>  <img src="/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/conv_2.PNG" alt="conv2"><br>  모든 pixel을 비교할 게 절대 아님. Feature 추출에 중점을 둠.</p><p>  <img src="/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/conv_3.PNG" alt="conv3"><br>  $$C_in x C_out$$ 번의 합성곱 연산<br>  bias는 하나의 벡터</p><p>  Filter(kernel)의 크기에 따라 영상의 크기가 줄어드는 문제점을 해결하기 위해 padding을 쓴다.<br>  <img src="/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/conv_4.PNG" alt="conv4"><br>  크기가 (2N + 1)인 커널에 상하좌우에 N개 Zero padding을 해주면 된다.</p><p>  Sliding Window 방식으로 커널이 이동되는데 그 크기를 조절하려면 Stride를 쓴다.<br>  너무 크면 출력 Feature Map이 과도하게 줄어드는 경우가 발생한다.</p><h3 id="보다-효율적인-Conv-연산을-하기-위해서는-1x1-Conv를-넣는다"><a href="#보다-효율적인-Conv-연산을-하기-위해서는-1x1-Conv를-넣는다" class="headerlink" title="보다 효율적인 Conv 연산을 하기 위해서는 1x1 Conv를 넣는다"></a>보다 효율적인 Conv 연산을 하기 위해서는 1x1 Conv를 넣는다</h3><p>  연산량, 파라미터 개수를 줄이기 위해 BottleNeck 구조를 활용한다.<br>  하필 1x1 ??<br>  <img src="/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/conv_5.PNG" alt="conv5"><br>  3x3 filter 한개와 1x1 + 3x3 parameter 비교</p><p>  그래도 모르겠다면??</p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.random((<span class="number">3</span>, <span class="number">3</span>)).shape == (np.random((<span class="number">3</span>, <span class="number">1</span>)) * np.random((<span class="number">1</span>, <span class="number">3</span>)).shape)</span><br><span class="line">&gt;&gt; <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># keras</span></span><br><span class="line"><span class="comment"># k - kernel_size(ex. 3, 5, 7...)</span></span><br><span class="line"><span class="comment"># n_filter - number of filters/channels 필터 갯수</span></span><br><span class="line">conv1_1 = Conv(n_filters, (<span class="number">1</span>, k))(input_1)</span><br><span class="line">conv1_2 = Conv(n_filters, (k, <span class="number">1</span>))(conv1_1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 왜 병목?</span></span><br><span class="line">conv2 = Conv2D(<span class="number">96</span>, (<span class="number">1</span>, <span class="number">1</span>), ...)(conv1) </span><br><span class="line"><span class="comment"># 줄였다가(receptive Field는 그대로, Feature map을 미리 줄임.)</span></span><br><span class="line">conv3 = Conv2D(<span class="number">96</span>, (<span class="number">3</span>, <span class="number">3</span>), ...)(conv2) </span><br><span class="line">conv4 = Conv2D(<span class="number">128</span>, (<span class="number">1</span>, <span class="number">1</span>), ...)(conv3) <span class="comment"># 다시 늘림</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="CNN-만들었는데-너무-느리네-어떻게-하면-빠르게-할-수-있을까…"><a href="#CNN-만들었는데-너무-느리네-어떻게-하면-빠르게-할-수-있을까…" class="headerlink" title="CNN 만들었는데 너무 느리네? 어떻게 하면 빠르게 할 수 있을까…"></a>CNN 만들었는데 너무 느리네? 어떻게 하면 빠르게 할 수 있을까…</h3><p>  Conv filter를 더 넓게 쓴다. –&gt; GPU 연산이 쉬워진다  </p>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 이렇게 되어있는 걸</span></span><br><span class="line">conv = Conv2D(<span class="number">96</span>, (<span class="number">3</span>, <span class="number">3</span>), ...)(conv)</span><br><span class="line">conv = Conv2D(<span class="number">96</span>, (<span class="number">3</span>, <span class="number">3</span>), ...)(conv)</span><br><span class="line"><span class="comment"># 아래처럼 바꾼다.</span></span><br><span class="line">conv = Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), ...)(conv)</span><br></pre></td></tr></table></figure><blockquote><p>GPU는 병렬로 처리하기 때문에 필터 갯수를 늘리면 더욱 빨라진다.<br>  쉽게 말하면 96개씩 두번보다 128개씩 한번이 더 빠르다.  </p></blockquote><p>  설명.</p><ol><li><p>96 // 3 = 32</p></li><li><p>2- layer을 1- layer로 바꿀땐</p></li><li><p>2^2 * 32 = 128</p><p>또 다른 방법<br>각 채널에서 별도의 2d conv를 하는 방법<br>in_channels * channel_multipliter 중간채널은 연결되고 1x1 conv로 out_channels에 매핑</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Keras</span></span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> SeparableConv2D</span><br><span class="line">net = SeparableConv2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>))(net)</span><br><span class="line"><span class="comment"># it&#x27;s almost 1:1 similar to the simple Keras Conv2D layer</span></span><br></pre></td></tr></table></figure><p>출처 :<br><a href="https://colab.research.google.com/drive/1i0Fwh-d8kF05o4QRfJG5dZt_P7G85MCS">source1</a><br><a href="https://towardsdatascience.com/speeding-up-convolutional-neural-networks-240beac5e30f">source2</a></p></li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/30/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%847/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>R 끄적여보기</title>
+      <link>https://ikarus-999.github.io/2020/11/29/R-%EB%81%84%EC%A0%81%EC%97%AC%EB%B3%B4%EA%B8%B0/</link>
+      <guid>https://ikarus-999.github.io/2020/11/29/R-%EB%81%84%EC%A0%81%EC%97%AC%EB%B3%B4%EA%B8%B0/</guid>
+      <pubDate>Sun, 29 Nov 2020 02:54:10 GMT</pubDate>
+      
+      <description>R 시작해보기
+R 변수
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="R-시작해보기"><a href="#R-시작해보기" class="headerlink" title="R 시작해보기"></a>R 시작해보기</h2><h3 id="R-변수"><a href="#R-변수" class="headerlink" title="R 변수"></a>R 변수</h3>  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line">v1 &lt;-<span class="built_in">c</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="literal">NA</span>) <span class="comment"># 벡터</span></span><br><span class="line"></span><br><span class="line">v2 &lt;- <span class="string">&#x27;a&#x27;</span> <span class="comment"># 동적 변수에 문자 assign</span></span><br><span class="line"></span><br><span class="line">v2 = <span class="string">&#x27;a&#x27;</span> <span class="comment"># 정적 변수</span></span><br><span class="line"></span><br><span class="line">rm(v1, v2) <span class="comment"># 변수 지우기</span></span><br><span class="line"></span><br><span class="line">v1 &lt;- <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">v2 &lt;- <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="literal">NA</span>) <span class="comment"># Error</span></span><br><span class="line">v3 &lt;- <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="literal">NULL</span>) <span class="comment"># ok</span></span><br><span class="line">mean(v1)</span><br><span class="line">mean(v2) <span class="comment"># Error</span></span><br><span class="line">mean(v3) <span class="comment"># ok</span></span><br><span class="line"><span class="literal">TRUE</span> | <span class="literal">TRUE</span> <span class="comment"># TRUE</span></span><br><span class="line"><span class="literal">TRUE</span> | <span class="literal">FALSE</span> <span class="comment"># TRUE</span></span><br><span class="line">!<span class="literal">TRUE</span> <span class="comment"># 뒤집기 연산</span></span><br><span class="line">!<span class="literal">FALSE</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 범주형 변수</span></span><br><span class="line">key &lt;- factor(<span class="string">&#x27;m&#x27;</span>, <span class="built_in">c</span>(<span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;f&#x27;</span>))</span><br><span class="line"></span><br><span class="line">nlevels(key)</span><br><span class="line">levels(key)[<span class="number">1</span>] <span class="comment"># 1레벨 추출</span></span><br><span class="line">levels(key)[<span class="number">2</span>] <span class="comment"># 종류 추출</span></span><br><span class="line"></span><br><span class="line">levels(key) &lt;- <span class="built_in">c</span>(<span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;f&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#vector</span></span><br><span class="line">x &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">x</span><br><span class="line">y &lt;- <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">&quot;a&quot;</span>)</span><br><span class="line">y</span><br><span class="line"><span class="built_in">names</span>(x) &lt;- <span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>,<span class="string">&quot;e&quot;</span>)</span><br><span class="line">x</span><br><span class="line">x[<span class="number">1</span>]</span><br><span class="line">x[<span class="number">2</span>]</span><br><span class="line">x[-<span class="number">1</span>]</span><br><span class="line">x[-<span class="number">2</span>]</span><br><span class="line">x[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">x[<span class="number">3</span>:<span class="number">5</span>]</span><br><span class="line">x[<span class="string">&quot;a&quot;</span>]</span><br><span class="line"><span class="built_in">names</span>(x)[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">length</span>(x)</span><br><span class="line">nrow(x)</span><br><span class="line">NROW(x)</span><br><span class="line"></span><br><span class="line">seq(<span class="number">1</span>,<span class="number">10</span>) <span class="comment"># range</span></span><br><span class="line">seq(<span class="number">1</span>:<span class="number">10</span>)</span><br><span class="line">seq(<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line">seq(<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>)</span><br><span class="line">NROW(seq(<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">rep</span>(<span class="number">1</span>:<span class="number">10</span>, times=<span class="number">2</span>) <span class="comment">#반복</span></span><br><span class="line"><span class="built_in">rep</span>(<span class="number">1</span>:<span class="number">10</span>, each=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">rep</span>(<span class="number">1</span>:<span class="number">10</span>, each=<span class="number">2</span>, times=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#list</span></span><br><span class="line">x &lt;- <span class="built_in">list</span>(name=<span class="string">&quot;jo&quot;</span>, he=<span class="string">&quot;999&quot;</span>)</span><br><span class="line">x</span><br><span class="line"></span><br><span class="line">x$name</span><br><span class="line">x$he</span><br><span class="line"></span><br><span class="line">x[<span class="number">1</span>]</span><br><span class="line">x[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">x[[<span class="number">1</span>]] <span class="comment"># 인덱싱</span></span><br><span class="line"></span><br><span class="line">x[[<span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">y &lt;- <span class="built_in">list</span>(name=<span class="string">&quot;k&quot;</span>, he=<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">y</span><br><span class="line">y[[<span class="number">1</span>]]</span><br><span class="line">y[[<span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">z &lt;- <span class="built_in">list</span>(<span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>), <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">z</span><br><span class="line"></span><br><span class="line">z[[<span class="number">1</span>]][<span class="number">2</span>]</span><br><span class="line">z[[<span class="number">2</span>]][-<span class="number">1</span>]</span><br><span class="line">z[[<span class="number">2</span>]][<span class="number">2</span>:<span class="number">4</span>]</span><br><span class="line"><span class="built_in">length</span>(z[[<span class="number">1</span>]])</span><br><span class="line"><span class="built_in">length</span>(z[[<span class="number">2</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#matrix</span></span><br><span class="line">matrix(<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>), nrow=<span class="number">2</span>)</span><br><span class="line">matrix(<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>), nrow=<span class="number">5</span>)</span><br><span class="line">m &lt;- matrix(<span class="number">1</span>:<span class="number">9</span>, nrow=<span class="number">3</span>, dimnames=<span class="built_in">list</span>(<span class="built_in">c</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>),<span class="built_in">c</span>(<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>)))</span><br><span class="line">m</span><br><span class="line"></span><br><span class="line">rownames(m)</span><br><span class="line">colnames(m)</span><br><span class="line"></span><br><span class="line">m[<span class="number">1</span>:<span class="number">2</span>,]</span><br><span class="line">m[,<span class="number">1</span>:<span class="number">2</span>]</span><br><span class="line">m[<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">m[<span class="number">3</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">m[-<span class="number">1</span>,]</span><br><span class="line">m[,-<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">m[-<span class="number">1</span>,-<span class="number">2</span>]</span><br><span class="line">m[-<span class="number">1</span>,-<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">m[m[,<span class="number">3</span>]&gt;<span class="number">8</span>,]</span><br><span class="line"><span class="comment">#m[m[2:3]2]</span></span><br><span class="line"></span><br><span class="line">m[m[,<span class="number">3</span>]&gt;=<span class="number">8</span>,<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>)]</span><br><span class="line">m[<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">3</span>),<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>)]</span><br><span class="line">m[m[,<span class="number">3</span>]&gt;=<span class="number">8</span>,m[<span class="number">1</span>,]&lt;<span class="number">5</span>]</span><br><span class="line">m</span><br><span class="line">m[<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">3</span>),<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">3</span>)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#array</span></span><br><span class="line">array(<span class="number">1</span>:<span class="number">12</span>, <span class="built_in">dim</span>=<span class="built_in">c</span>(<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">x &lt;- array(<span class="number">1</span>:<span class="number">12</span>, <span class="built_in">dim</span>=<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">x</span><br><span class="line">x[,,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">m[<span class="number">1</span>,]</span><br><span class="line"></span><br><span class="line">m1 &lt;- matrix(<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>), nrow=<span class="number">5</span>)</span><br><span class="line">m1</span><br><span class="line"></span><br><span class="line">name &lt;- <span class="built_in">c</span>(<span class="string">&quot;kim&quot;</span>, <span class="string">&quot;lee&quot;</span>, <span class="string">&quot;park&quot;</span>)</span><br><span class="line">age &lt;- <span class="built_in">c</span>(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br><span class="line">gender &lt;-factor(<span class="built_in">c</span>(<span class="string">&quot;M&quot;</span>,<span class="string">&quot;F&quot;</span>,<span class="string">&quot;M&quot;</span>))</span><br><span class="line">df &lt;- data.frame(name, age, gender)</span><br><span class="line">df</span><br><span class="line">str(df)</span><br><span class="line">df[df$age &gt;= <span class="number">20</span> &amp; gender == <span class="string">&quot;F&quot;</span>, <span class="built_in">c</span>(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;age&quot;</span>)]</span><br><span class="line">df[df$age &gt;= <span class="number">20</span> &amp; gender == <span class="string">&quot;F&quot;</span>, <span class="string">&quot;name&quot;</span>]</span><br><span class="line"></span><br><span class="line">df[df[,<span class="number">2</span>]&gt;=<span class="number">20</span> &amp; df[,<span class="number">3</span>] == <span class="string">&quot;F&quot;</span>, <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Code/">Code</category>
+      
+      <category domain="https://ikarus-999.github.io/categories/Code/R/">R</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/R/">R</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/coding/">coding</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/11/29/R-%EB%81%84%EC%A0%81%EC%97%AC%EB%B3%B4%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>딥러닝-입문과-준비6</title>
