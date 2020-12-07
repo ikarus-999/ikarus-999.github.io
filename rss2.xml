@@ -15,7 +15,7 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Sun, 06 Dec 2020 13:21:15 GMT</pubDate>
+    <pubDate>Mon, 07 Dec 2020 14:06:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -46,7 +46,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="데이콘-도전-후기"><a href="#데이콘-도전-후기" class="headerlink" title="데이콘 도전 후기"></a>데이콘 도전 후기</h2><p>  흥미롭지만 쉽지는 않다.<br>  말 그대로 새로운 파생변수, 모델을 많이 만들면 점수가 오르긴 한다.</p><p>  <a href="https://dacon.io/competitions/open/235597/leaderboard/">데이콘_연습문제</a></p><p>  연습용이긴 한데 BERT모델 폭격으로 <del>양민학살</del> 이 벌써부터 시작되었…ㅎㄷㄷ</p><p>  버트모델 안쓰고도 순위 올릴수는 있다. </p><p>  지금부터 그 방법을 소개합니다.</p><h3 id="데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching"><a href="#데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching" class="headerlink" title="데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching"></a>데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching</h3><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_1.PNG" alt="이것이 바로 VDCNN">  </p><p>  VDCNN은 GPU가 잘 버텨주면<br>  0.86까지는 마구마구 올릴수 있음.  </p><p>  이것이 바로 VDCNN이당!<br>  <a href="https://github.com/ikarus-999/VDCNN_kor"><img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_5.PNG" alt="VDCNN code"></a></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_9.PNG" alt="VDCNN 학습장면"><br>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/Dacon01.PNG" alt="데이콘 결과"><br>  여기에 여러 가지 모델 Ensemble 해보면 0.88은 가능해보일 것 같네요.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="데이콘-도전-후기"><a href="#데이콘-도전-후기" class="headerlink" title="데이콘 도전 후기"></a>데이콘 도전 후기</h2><p>  흥미롭지만 쉽지는 않다.<br>  말 그대로 새로운 파생변수, 모델을 많이 만들면 점수가 오르긴 한다.</p><p>  <a href="https://dacon.io/competitions/open/235597/leaderboard/">데이콘_연습문제</a></p><p>  연습용이긴 한데 BERT모델 폭격으로 <del>양민학살</del> 이 벌써부터 시작되었…ㅎㄷㄷ</p><p>  버트모델 안쓰고도 순위 올릴수는 있다. </p><p>  지금부터 그 방법을 소개합니다.</p><h3 id="데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching"><a href="#데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching" class="headerlink" title="데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching"></a>데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching</h3><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_1.PNG" alt="이것이 바로 VDCNN">  </p><p>  VDCNN은 GPU가 잘 버텨주면<br>  0.86까지는 마구마구 올릴수 있음.  </p><p>  이것이 바로 VDCNN이당!<br>  <a href="https://github.com/ikarus-999/VDCNN_kor"><img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_5.PNG" alt="VDCNN code"></a></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_9.PNG" alt="VDCNN 학습장면"></p><p>  학습 모델을 그림으로 보기</p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_36_0.png" alt="VDCNN 그림1"></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/Dacon01.PNG" alt="데이콘 결과"><br>  여기에 여러 가지 모델 Ensemble 해보면 0.88은 가능해보일 것 같네요.</p>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
