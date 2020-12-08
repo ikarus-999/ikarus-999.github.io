@@ -15,7 +15,7 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Tue, 08 Dec 2020 15:43:18 GMT</pubDate>
+    <pubDate>Tue, 08 Dec 2020 18:43:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -60,9 +60,9 @@
       
       <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
       
-      <category domain="https://ikarus-999.github.io/tags/%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/">경진대회</category>
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
       
-      <category domain="https://ikarus-999.github.io/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</category>
+      <category domain="https://ikarus-999.github.io/tags/competition/">competition</category>
       
       
       <comments>https://ikarus-999.github.io/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/#disqus_thread</comments>
