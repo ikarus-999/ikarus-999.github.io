@@ -15,8 +15,59 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Mon, 07 Dec 2020 14:06:31 GMT</pubDate>
+    <pubDate>Tue, 08 Dec 2020 15:43:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>인공지능 경진대회 후기</title>
+      <link>https://ikarus-999.github.io/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/</link>
+      <guid>https://ikarus-999.github.io/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/</guid>
+      <pubDate>Tue, 08 Dec 2020 15:16:14 GMT</pubDate>
+      
+      <description>인공지능 문제해결 경진대회 참가후기 🔔
+ 정말 치열했던 경진대회였다. 
+
+ 처음에는 이미지 멀티라벨 다중 분류 문제가 나왔었고 
+
+ 그 이후 본선대회에서는 NLP, OCR, GAN 등 여러 도메인 문제가 출현했었다 
+
+ 베이스라인 코드 그런건 사실상 없ㅋ음ㅋ..🔐
+
+ 그냥 데이터를 말 그대로 해체 분석을 했어야 했다.
+
+ 아무리 Data Clensing을 해도 그대로인 loss와 score… 8:45🕛
+
+ 결국 아예 리모델링, 데이터 Cleanize 한 뒤에 학습을 다시 돌렸다.
+
+ 천신만고 끝에…
+
+ 
+
+ 
+
+ 
+참고로 팀명</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="인공지능-문제해결-경진대회-참가후기-🔔"><a href="#인공지능-문제해결-경진대회-참가후기-🔔" class="headerlink" title="인공지능 문제해결 경진대회 참가후기 🔔"></a>인공지능 문제해결 경진대회 참가후기 🔔</h2><p>  정말 치열했던 경진대회였다. </p><p>  처음에는 이미지 멀티라벨 다중 분류 문제가 나왔었고  </p><p>  그 이후 본선대회에서는 NLP, OCR, GAN 등 여러 도메인 문제가 출현했었다  </p><p>  베이스라인 코드 그런건 사실상 없ㅋ음ㅋ..🔐</p><p>  그냥 데이터를 말 그대로 해체 분석을 했어야 했다.</p><p>  아무리 Data Clensing을 해도 그대로인 loss와 score… 8:45🕛</p><p>  결국 아예 리모델링, 데이터 Cleanize 한 뒤에 학습을 다시 돌렸다.</p><p>  천신만고 끝에…</p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/2222.png" alt="최종순위...ㄷㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/3333.PNG" alt="최종순위 ㅎㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/4444.PNG" alt="최종순위 ㄷㄷㄷ;;"><br>    참고로 팀명은 <del>풍선띄우기</del> ;;</p><p>  최종 명단에 발표되기까지 엄청난 긴장감이…🌡📈</p>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/Competition/">Competition</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/">경진대회</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/">딥러닝</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Dacon도전기</title>
@@ -46,7 +97,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="데이콘-도전-후기"><a href="#데이콘-도전-후기" class="headerlink" title="데이콘 도전 후기"></a>데이콘 도전 후기</h2><p>  흥미롭지만 쉽지는 않다.<br>  말 그대로 새로운 파생변수, 모델을 많이 만들면 점수가 오르긴 한다.</p><p>  <a href="https://dacon.io/competitions/open/235597/leaderboard/">데이콘_연습문제</a></p><p>  연습용이긴 한데 BERT모델 폭격으로 <del>양민학살</del> 이 벌써부터 시작되었…ㅎㄷㄷ</p><p>  버트모델 안쓰고도 순위 올릴수는 있다. </p><p>  지금부터 그 방법을 소개합니다.</p><h3 id="데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching"><a href="#데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching" class="headerlink" title="데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching"></a>데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching</h3><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_1.PNG" alt="이것이 바로 VDCNN">  </p><p>  VDCNN은 GPU가 잘 버텨주면<br>  0.86까지는 마구마구 올릴수 있음.  </p><p>  이것이 바로 VDCNN이당!<br>  <a href="https://github.com/ikarus-999/VDCNN_kor"><img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_5.PNG" alt="VDCNN code"></a></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_9.PNG" alt="VDCNN 학습장면"></p><p>  학습 모델을 그림으로 보기</p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_36_0.png" alt="VDCNN 그림1"></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/Dacon01.PNG" alt="데이콘 결과"><br>  여기에 여러 가지 모델 Ensemble 해보면 0.88은 가능해보일 것 같네요.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="데이콘-도전-후기"><a href="#데이콘-도전-후기" class="headerlink" title="데이콘 도전 후기"></a>데이콘 도전 후기</h2><p>  흥미롭지만 쉽지는 않다.<br>  말 그대로 새로운 파생변수, 모델을 많이 만들면 점수가 오르긴 한다.</p><p>  <a href="https://dacon.io/competitions/open/235597/leaderboard/">데이콘_연습문제</a></p><p>  연습용이긴 한데 BERT모델 폭격으로 <del>양민학살</del> 이 벌써부터 시작되었…ㅎㄷㄷ</p><p>  버트모델 안쓰고도 순위 올릴수는 있다. </p><p>  지금부터 그 방법을 소개합니다.</p><h3 id="데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching"><a href="#데이콘-순위를-올릴수-있는-방법-창의적인-modeling-K-cross-Validation-parameter-searching" class="headerlink" title="데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching"></a>데이콘 순위를 올릴수 있는 방법 - 창의적인 modeling, K-cross Validation, parameter searching</h3><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_1.PNG" alt="이것이 바로 VDCNN">  </p><p>  VDCNN은 GPU가 잘 버텨주면<br>  0.86까지는 마구마구 올릴수 있음.  </p><p>  이것이 바로 VDCNN이당!<br>  <a href="https://github.com/ikarus-999/VDCNN_kor"><img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_5.PNG" alt="VDCNN code"></a></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/vdcnn_9.PNG" alt="VDCNN 학습장면"></p><p>  학습 모델을 그림으로 보기</p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_36_0.png" alt="VDCNN 그림1"></p><p>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/Dacon01.PNG" alt="데이콘 결과"><br>  여기에 여러 가지 모델 Ensemble 해보면 0.88은 가능해보일 것 같네요.</p><blockquote><p>추가로 모델 Ensemble 을 시도<br>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_43_0.png" alt="추가했던 모델1"><br>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_50_0.png" alt="추가했던 모델2"><br>  <img src="/2020/12/06/Dacon%EB%8F%84%EC%A0%84%EA%B8%B0/output_57_0.png" alt="추가했던 모델3"></p></blockquote><blockquote><p>추가적으로 트랜스포머 모델링..(2020-12-09 추가…)<br>  <a href="https://github.com/ikarus-999/VDCNN_kor/blob/master/TF2_kor_2.0.ipynb">Transformer</a></p></blockquote>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
@@ -925,41 +976,6 @@ publish는 잘 쓰지 않는다 파일명 에러나기 때문. 그냥
       
       
       <comments>https://ikarus-999.github.io/2020/10/24/firstpost1/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://ikarus-999.github.io/2020/10/24/hello-world/</link>
-      <guid>https://ikarus-999.github.io/2020/10/24/hello-world/</guid>
-      <pubDate>Sat, 24 Oct 2020 11:12:41 GMT</pubDate>
-      
-      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-
-Quick Start
-Create a new post
-1
-
-
-$ hexo new &quot;My New Post&quot;
-
-
-More info: Writing
-
-Run server
-1
-
-
-$ hexo s</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://ikarus-999.github.io/2020/10/24/hello-world/#disqus_thread</comments>
       
     </item>
     
