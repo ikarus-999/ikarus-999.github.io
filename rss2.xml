@@ -15,7 +15,7 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Tue, 08 Dec 2020 18:43:04 GMT</pubDate>
+    <pubDate>Tue, 08 Dec 2020 18:44:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -50,7 +50,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="인공지능-문제해결-경진대회-참가후기-🔔"><a href="#인공지능-문제해결-경진대회-참가후기-🔔" class="headerlink" title="인공지능 문제해결 경진대회 참가후기 🔔"></a>인공지능 문제해결 경진대회 참가후기 🔔</h2><p>  정말 치열했던 경진대회였다. </p><p>  처음에는 이미지 멀티라벨 다중 분류 문제가 나왔었고  </p><p>  그 이후 본선대회에서는 NLP, OCR, GAN 등 여러 도메인 문제가 출현했었다  </p><p>  베이스라인 코드 그런건 사실상 없ㅋ음ㅋ..🔐</p><p>  그냥 데이터를 말 그대로 해체 분석을 했어야 했다.</p><p>  아무리 Data Clensing을 해도 그대로인 loss와 score… 8:45🕛</p><p>  결국 아예 리모델링, 데이터 Cleanize 한 뒤에 학습을 다시 돌렸다.</p><p>  천신만고 끝에…</p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/2222.png" alt="최종순위...ㄷㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/3333.PNG" alt="최종순위 ㅎㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/4444.PNG" alt="최종순위 ㄷㄷㄷ;;"><br>    참고로 팀명은 <del>풍선띄우기</del> ;;</p><p>  최종 명단에 발표되기까지 엄청난 긴장감이…🌡📈</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="인공지능-문제해결-경진대회-참가후기-🔔"><a href="#인공지능-문제해결-경진대회-참가후기-🔔" class="headerlink" title="인공지능 문제해결 경진대회 참가후기 🔔"></a>인공지능 문제해결 경진대회 참가후기 🔔</h2><p>  정말 치열했던 경진대회였다. </p><p>  처음에는 이미지 멀티라벨 다중 분류 문제가 나왔었고  </p><p>  그 이후 본선대회에서는 NLP, OCR, GAN 등 여러 도메인 문제가 출현했었다  </p><p>  베이스라인 코드 그런건 사실상 없ㅋ음ㅋ..🔐</p><p>  그냥 데이터를 말 그대로 해체 분석을 했어야 했다.</p><p>  아무리 Data Clensing을 해도 그대로인 loss와 score… 8:45🕛</p><p>  결국 아예 리모델링, 데이터 Cleanize 한 뒤에 학습을 다시 돌렸다.</p><p>  천신만고 끝에…</p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/2222.PNG" alt="최종순위...ㄷㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/3333.PNG" alt="최종순위 ㅎㄷㄷ"></p><p>  <img src="/2020/12/09/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-%ED%9B%84%EA%B8%B0/4444.PNG" alt="최종순위 ㄷㄷㄷ;;"><br>    참고로 팀명은 <del>풍선띄우기</del> ;;</p><p>  최종 명단에 발표되기까지 엄청난 긴장감이…🌡📈</p>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
@@ -58,9 +58,9 @@
       <category domain="https://ikarus-999.github.io/categories/Machine-Learning/Competition/">Competition</category>
       
       
-      <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
-      
       <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
       
       <category domain="https://ikarus-999.github.io/tags/competition/">competition</category>
       
