@@ -15,8 +15,47 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Tue, 08 Dec 2020 18:44:01 GMT</pubDate>
+    <pubDate>Tue, 22 Dec 2020 15:42:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>어나더Dacon도전기_2</title>
+      <link>https://ikarus-999.github.io/2020/12/23/%EC%96%B4%EB%82%98%EB%8D%94Dacon%EB%8F%84%EC%A0%84%EA%B8%B0-2/</link>
+      <guid>https://ikarus-999.github.io/2020/12/23/%EC%96%B4%EB%82%98%EB%8D%94Dacon%EB%8F%84%EC%A0%84%EA%B8%B0-2/</guid>
+      <pubDate>Tue, 22 Dec 2020 15:13:20 GMT</pubDate>
+      
+      <description>데이콘 또다른 대회 후기 - 데이콘 어나더 버전🌠🌠
+ 역시 흥미로운 데이터 세계 🐱
+Regression, 특히 CNN, LSTM 모델은 Epoch를 늘리면 더욱 정확도가 향상되는 특징이 있다!! 
+
+ 너무 많이 늘리면 Overfitting이 날 수 있으니 LR 스케줄러 등 다양한 방법을 시도해봐야 한다.
+
+CNN-LSTM 다변량 회귀 모델링 후기🌠
+ 처음에는 왜 이렇게 loss가 줄지 않는지 🎚 의문이 들었다.🌠
+
+ 
+헐… 4.5 라니;;;🔌 20Epoch 가지고는 아예 학습이 안되나보다.
+
+ 그러면 Epoch🕜를 늘</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="데이콘-또다른-대회-후기-데이콘-어나더-버전🌠🌠"><a href="#데이콘-또다른-대회-후기-데이콘-어나더-버전🌠🌠" class="headerlink" title="데이콘 또다른 대회 후기 - 데이콘 어나더 버전🌠🌠"></a>데이콘 또다른 대회 후기 - 데이콘 어나더 버전🌠🌠</h2><p>  역시 흥미로운 데이터 세계 🐱<br>  Regression, 특히 CNN, LSTM 모델은 Epoch를 늘리면 더욱 정확도가 향상되는 특징이 있다!!  </p><p>  너무 많이 늘리면 Overfitting이 날 수 있으니 LR 스케줄러 등 다양한 방법을 시도해봐야 한다.</p><h3 id="CNN-LSTM-다변량-회귀-모델링-후기🌠"><a href="#CNN-LSTM-다변량-회귀-모델링-후기🌠" class="headerlink" title="CNN-LSTM 다변량 회귀 모델링 후기🌠"></a>CNN-LSTM 다변량 회귀 모델링 후기🌠</h3><p>  처음에는 왜 이렇게 loss가 줄지 않는지 🎚 의문이 들었다.🌠</p><p>  <img src="/2020/12/23/%EC%96%B4%EB%82%98%EB%8D%94Dacon%EB%8F%84%EC%A0%84%EA%B8%B0-2/Multi_var_reg.PNG" alt="loss가 전혀 줄지 않음"><br>  헐… 4.5 라니;;;🔌 20Epoch 가지고는 아예 학습이 안되나보다.</p><p>  그러면 Epoch🕜를 늘리는데 그냥 늘리면 안된다💽</p><p>  자칫 잘못하면 오버피팅이 발생할 수 있기 때문이다.🕜</p><p>  그리고 시계열 문제는 시간, 구간당 평균이나 여러 통계적 변수를 만들어야 점수가 더 잘나오는 특징이 있다.⏩</p><p>  <a href="https://github.com/sachinruk/KerasQuantileModel/blob/master/Keras%20Quantile%20Model.ipynb">참고문서1</a></p><p>  역시나 예측이 맞았다. Epoch을 약간(?) 겁나게 늘리고 optimizer나 다른 학습율 스케줄러, sgd에 decay, momentum 을 주어야 하나보다.</p><p>  그리고 다변량 회귀이기 때문에 validation loss 계산이 약간 신중해야 정확한 loss값이 계산이 가능하다.</p><p>  test dataset에 element-wise 방식으로 계산되는거라 test dataset shape 그대로 predict가 출력된다.</p><p>  Reshape, Squeeze 를 써서 shape을 맞춰주어야 한다.</p><p>  Quantile Regression 문제는 그냥 Regression에 Quantile별로 값을 추출해야 하는 약간의(?) 난제가 존재한다.</p><p>  Pytorch는 Pythonic🐍 하지만 어떤 면에서는 TF2.x 보다 더 까다로운 것 같다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/Kaggle-Dacon/">Kaggle, Dacon</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/Dacon/">Dacon</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2020/12/23/%EC%96%B4%EB%82%98%EB%8D%94Dacon%EB%8F%84%EC%A0%84%EA%B8%B0-2/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>인공지능 경진대회 후기</title>
@@ -926,54 +965,6 @@ We live in the tragedy! 유명한 비극과 같은
       
       
       <comments>https://ikarus-999.github.io/2020/10/24/fpost2/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>firstpost1</title>
-      <link>https://ikarus-999.github.io/2020/10/24/firstpost1/</link>
-      <guid>https://ikarus-999.github.io/2020/10/24/firstpost1/</guid>
-      <pubDate>Sat, 24 Oct 2020 13:42:28 GMT</pubDate>
-      
-      <description>HEXO 블로그 설치와 사용법
-새 글 쓰는 법
-1
-
-
-$ hexo new [레이아웃이름] &quot;새 포스트이름&quot;
-
-
-레이아웃 디폴트(바로 발행) : post
-
-바로 발행되지 않는 글 : draft
-
-1
-
-
-$ hexo publish &quot;새 포스트이름&quot;
-
-
-으로 draft에서 publish 합니다.
-
-publish는 잘 쓰지 않는다 파일명 에러나기 때문. 그냥
-냅다 MarkDown으로 쓰고 hexo g -d로 해버림</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="HEXO-블로그-설치와-사용법"><a href="#HEXO-블로그-설치와-사용법" class="headerlink" title="HEXO 블로그 설치와 사용법"></a>HEXO 블로그 설치와 사용법</h2><h3 id="새-글-쓰는-법"><a href="#새-글-쓰는-법" class="headerlink" title="새 글 쓰는 법"></a>새 글 쓰는 법</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [레이아웃이름] <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>레이아웃 디폴트(바로 발행) : post</p><p>바로 발행되지 않는 글 : draft</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish <span class="string">&quot;새 포스트이름&quot;</span></span><br></pre></td></tr></table></figure><p>으로 draft에서 publish 합니다.</p><blockquote><p>publish는 잘 쓰지 않는다 파일명 에러나기 때문. 그냥<br>냅다 MarkDown으로 쓰고 hexo g -d로 해버림</p></blockquote>]]></content:encoded>
-      
-      
-      <category domain="https://ikarus-999.github.io/categories/GitPage/">GitPage</category>
-      
-      <category domain="https://ikarus-999.github.io/categories/GitPage/Hexo/">Hexo</category>
-      
-      
-      <category domain="https://ikarus-999.github.io/tags/HEXO/">HEXO</category>
-      
-      <category domain="https://ikarus-999.github.io/tags/blog/">blog</category>
-      
-      
-      <comments>https://ikarus-999.github.io/2020/10/24/firstpost1/#disqus_thread</comments>
       
     </item>
     
