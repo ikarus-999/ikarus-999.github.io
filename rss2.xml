@@ -15,8 +15,47 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Tue, 22 Dec 2020 15:42:32 GMT</pubDate>
+    <pubDate>Sat, 02 Jan 2021 13:12:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>치열한-데이콘후기</title>
+      <link>https://ikarus-999.github.io/2021/01/02/%EC%B9%98%EC%97%B4%ED%95%9C-%EB%8D%B0%EC%9D%B4%EC%BD%98%ED%9B%84%EA%B8%B0/</link>
+      <guid>https://ikarus-999.github.io/2021/01/02/%EC%B9%98%EC%97%B4%ED%95%9C-%EB%8D%B0%EC%9D%B4%EC%BD%98%ED%9B%84%EA%B8%B0/</guid>
+      <pubDate>Sat, 02 Jan 2021 12:56:29 GMT</pubDate>
+      
+      <description>데이콘 최근 대회 후기 - 데이콘 어나더 버전
+ 흥미롭지만 quantile loss… 정말 만만치 않다.
+loss function 수식구현은 쉽지만 loss를 줄이는 방법이 관건이다.
+진짜 4.1에서 줄어들지 않는 loss… 과연 어떻게 하면 줄일수 있을까…
+
+다변량 회귀 왜 이렇게 어려울까요? - 데이콘 대회에서 얻은 엄청난 교훈
+ loss 계산할때 다른 target 값과 x_train값이 아닌 
+
+ 다른 Element 끼리 계산되어서 오히려 loss가 폭증하기도 한다.
+
+ Wandb로 시각화 안했으면 큰일났었을듯 싶었다. 
+
+ </description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="데이콘-최근-대회-후기-데이콘-어나더-버전"><a href="#데이콘-최근-대회-후기-데이콘-어나더-버전" class="headerlink" title="데이콘 최근 대회 후기 - 데이콘 어나더 버전"></a>데이콘 최근 대회 후기 - 데이콘 어나더 버전</h2><p>  흥미롭지만 quantile loss… 정말 만만치 않다.<br>  loss function 수식구현은 쉽지만 loss를 줄이는 방법이 관건이다.<br>  진짜 4.1에서 줄어들지 않는 loss… 과연 어떻게 하면 줄일수 있을까…</p><h3 id="다변량-회귀-왜-이렇게-어려울까요-데이콘-대회에서-얻은-엄청난-교훈"><a href="#다변량-회귀-왜-이렇게-어려울까요-데이콘-대회에서-얻은-엄청난-교훈" class="headerlink" title="다변량 회귀 왜 이렇게 어려울까요? - 데이콘 대회에서 얻은 엄청난 교훈"></a>다변량 회귀 왜 이렇게 어려울까요? - 데이콘 대회에서 얻은 엄청난 교훈</h3><p>  loss 계산할때 다른 target 값과 x_train값이 아닌   </p><p>  다른 Element 끼리 계산되어서 오히려 loss가 폭증하기도 한다.</p><p>  Wandb로 시각화 안했으면 큰일났었을듯 싶었다. </p><p>  Loss 시각화 툴로 보니 초반에서 수렴하지 않는 문제나 아예 u자로 불규칙적으로 튀는 현상도 발생….</p><p>  <img src="/2021/01/02/%EC%B9%98%EC%97%B4%ED%95%9C-%EB%8D%B0%EC%9D%B4%EC%BD%98%ED%9B%84%EA%B8%B0/%EC%8B%A0%EA%B8%B0%ED%95%9C%EA%B7%B8%EB%9E%98%ED%94%84.PNG" alt="loss가 줄어드는 것처럼 보이지만 실제는 ..."></p><p>  분명 window dataset으로 부하분산을 하면 데이터 처리가 수월할 것 같지만…</p><p>  채점을 해보니 극악의 Loss가 나오기도 한다.</p><p>  이 떄에는 window_size, buffer size를 잘 조절해야 한다.</p><p>  window_size를 너무 낮추면 자칫하면 GPU 사용률은 한자리에 머물고 시간은 오래 걸린다. </p><p>  하지만 GPU RAM 사용량은 줄어드는 이점은 있다.</p><p>  window dataset을 하다보면 배치 크기가 안 맞아서 예측이 안될때가 있는데 이럴땐…<br>  <img src="/2021/01/02/%EC%B9%98%EC%97%B4%ED%95%9C-%EB%8D%B0%EC%9D%B4%EC%BD%98%ED%9B%84%EA%B8%B0/%ED%9D%90%EC%9D%B5.PNG" alt="배치 크기가 안맞을 떄는 이렇게 padding을 쓴다."></p><p>  Shuffle Buffer size 조절은 필수, batch Size에 주의하여 조절한다.<br>  그렇지 않으면(BATCH SIZE가 굉장히 높다면)<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING:tensorflow:5 out of the last 5 calls to &lt;function Model.make_predict_function.&lt;locals&gt;.predict_function at 0x7f2570221d30&gt; triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes&#x3D;True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https:&#x2F;&#x2F;www.tensorflow.org&#x2F;tutorials&#x2F;customization&#x2F;performance#python_or_tensor_args and https:&#x2F;&#x2F;www.tensorflow.org&#x2F;api_docs&#x2F;python&#x2F;tf&#x2F;function for  more details. </span><br></pre></td></tr></table></figure></p><p>  이런 경고가 나온다.. -&gt; batch size를 반드시 조절하거나 batch padding…</p>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/Kaggle-Dacon/">Kaggle, Dacon</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/Dacon/">Dacon</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/Try/">Try</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2021/01/02/%EC%B9%98%EC%97%B4%ED%95%9C-%EB%8D%B0%EC%9D%B4%EC%BD%98%ED%9B%84%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>어나더Dacon도전기_2</title>
@@ -917,54 +956,6 @@ We live in the tragedy! 유명한 비극과 같은
       
       
       <comments>https://ikarus-999.github.io/2020/10/26/fpost3/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>fpost2</title>
-      <link>https://ikarus-999.github.io/2020/10/24/fpost2/</link>
-      <guid>https://ikarus-999.github.io/2020/10/24/fpost2/</guid>
-      <pubDate>Sat, 24 Oct 2020 14:08:30 GMT</pubDate>
-      
-      <description>머신러닝과 딥러닝의 차이
-머신러닝
- 1. 머신러닝은 정형 데이터
-
- * 표 형태의 데이터
-
- 2. 딥러닝은 비정형 데이터
-
- * 그림, 사진, 오디오 형태의 자연 데이터
-
-머신러닝 기초 준비물
-충분한 용량(RAM 32GB++, SSD 512GB++, i7-10Gen++)의 데스크탑 권장!
-
-가장 먼저 파이썬, 텐서플로우 를 설치합니다.
-
-설치 버전 확인!! 매우 중요합니다!
-
- 1. 파이썬
- 2. 텐서플로우
- 3. 넘파이 &amp; 싸이킷런
-
-파이썬 버전을 여러개 설치 가능합니다. 이때는 환경 변수, IDE 경로 셋팅이 중요합니다.
-
-윈도</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="머신러닝과-딥러닝의-차이"><a href="#머신러닝과-딥러닝의-차이" class="headerlink" title="머신러닝과 딥러닝의 차이"></a>머신러닝과 딥러닝의 차이</h2><h3 id="머신러닝"><a href="#머신러닝" class="headerlink" title="머신러닝"></a>머신러닝</h3><ol><li>머신러닝은 정형 데이터</li></ol><ul><li>표 형태의 데이터</li></ul><ol start="2"><li>딥러닝은 비정형 데이터</li></ol><ul><li>그림, 사진, 오디오 형태의 자연 데이터</li></ul><h3 id="머신러닝-기초-준비물"><a href="#머신러닝-기초-준비물" class="headerlink" title="머신러닝 기초 준비물"></a>머신러닝 기초 준비물</h3><blockquote><p>충분한 용량(RAM 32GB++, SSD 512GB++, i7-10Gen++)의 데스크탑 권장!</p></blockquote><blockquote><p>가장 먼저 <strong>파이썬</strong>, <strong>텐서플로우</strong> 를 설치합니다.</p><blockquote><p><em>설치 버전 확인!!</em> 매우 중요합니다!</p></blockquote></blockquote><ol><li>파이썬</li><li>텐서플로우</li><li>넘파이 &amp; 싸이킷런</li></ol><blockquote><p>파이썬 버전을 여러개 설치 가능합니다. 이때는 <strong>환경 변수, IDE 경로 셋팅이 중요</strong>합니다.</p><blockquote><p>윈도우라면 CMD보다는 powershell을 쓰는것이 편합니다.</p></blockquote></blockquote><ol start="4"><li>제일 쉬운 방법은 아나콘다🛎… 하지만 용량이 큽니다.</li></ol><blockquote><p>써본 결과 리눅스에 도커가 최적 환경입니다⚙️. 추후 포스팅 예정 입니다.📯</p></blockquote><h3 id="Lets-Burn-the-GPU-🔥🔥🔥-TF2-0-wow"><a href="#Lets-Burn-the-GPU-🔥🔥🔥-TF2-0-wow" class="headerlink" title="Lets Burn the GPU!!🔥🔥🔥(TF2.0 wow!!)"></a>Lets Burn the GPU!!🔥🔥🔥(TF2.0 wow!!)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># tensorflow 실행모드를 확인합니다</span></span><br><span class="line">print(tf.executing_eagerly())</span><br><span class="line"></span><br><span class="line">shape = (<span class="built_in">int</span>(<span class="number">10000</span>), <span class="built_in">int</span>(<span class="number">10000</span>))</span><br><span class="line">startTime = datetime.now()</span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">&quot;/gpu&quot;</span>):</span><br><span class="line">    random_matrix = tf.random.uniform(shape=shape, minval=<span class="number">0</span>, maxval=<span class="number">1</span>)</span><br><span class="line">    dot_operation = tf.matmul(random_matrix, tf.transpose(random_matrix))</span><br><span class="line">    sum_operation = tf.reduce_sum(dot_operation)</span><br><span class="line"></span><br><span class="line">result = sum_operation</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;\n&quot;</span> * <span class="number">2</span>)</span><br><span class="line">print(<span class="string">&quot;Time taken:&quot;</span>, datetime.now() - startTime)</span><br><span class="line">print(<span class="string">&quot;\n&quot;</span> * <span class="number">2</span>)</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
-      
-      
-      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
-      
-      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
-      
-      
-      <comments>https://ikarus-999.github.io/2020/10/24/fpost2/#disqus_thread</comments>
       
     </item>
     
