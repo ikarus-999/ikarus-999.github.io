@@ -15,8 +15,42 @@
     <atom:link href="https://ikarus-999.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>데이터쟁이 이카루스 블로그입니다</description>
-    <pubDate>Sun, 20 Jun 2021 14:57:31 GMT</pubDate>
+    <pubDate>Fri, 16 Jul 2021 11:45:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>논문 리뷰</title>
+      <link>https://ikarus-999.github.io/2021/07/15/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/</link>
+      <guid>https://ikarus-999.github.io/2021/07/15/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/</guid>
+      <pubDate>Thu, 15 Jul 2021 10:43:57 GMT</pubDate>
+      
+      <description>딥러닝 논문 리뷰
+ RNN의 고질적인 문제점은 Sequence가 길면
+i번째 output을 만들기 위해 i번째 input + i번째 hidden state를 사용한다.
+하지만 Sequence가 너무 길어지면 해당 정보를 사용하지 못하는 현상인데,
+Long-Term Dependency Problem… 
+
+ 이걸 해결하기 위해서는 Recurrent Layer 대신
+Attention Mechanism을 쓰면 Sequence 길이에 상관없이 input / output의 Dependency를 보다 정확히 감지… 
+
+트랜스포머를 써야 하는 이</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="딥러닝-논문-리뷰"><a href="#딥러닝-논문-리뷰" class="headerlink" title="딥러닝 논문 리뷰"></a>딥러닝 논문 리뷰</h2><p>  RNN의 고질적인 문제점은 Sequence가 길면<br>  i번째 output을 만들기 위해 i번째 input + i번째 hidden state를 사용한다.<br>  하지만 Sequence가 너무 길어지면 해당 정보를 사용하지 못하는 현상인데,<br>  Long-Term Dependency Problem…  </p><p>  이걸 해결하기 위해서는 Recurrent Layer 대신<br>  Attention Mechanism을 쓰면 Sequence 길이에 상관없이 input / output의 Dependency를 보다 정확히 감지…  </p><h3 id="트랜스포머를-써야-하는-이유"><a href="#트랜스포머를-써야-하는-이유" class="headerlink" title="트랜스포머를 써야 하는 이유?"></a>트랜스포머를 써야 하는 이유?</h3><blockquote><p>현재 Video Understanding 모델에서도 시도되고 있음(TimesFormer; 기존 프레임 단위로 쪼갠 CNN모델에 비해서 메모리 절감과 Inference 속도 향상)<br>  Timesformer 은 효과적으로 프레임별 델타량만 감지  </p></blockquote><ul><li>Positional Encoding을 시간축에 확장한 모델, 시간축과 공간축 전체를 어텐션 하면 Cost가 너무 크기 때문<br>밀리초 단위로 결판이 나는 게임 판독에도 정말 용이할것으로 기대됨.  </li></ul><h3 id="트랜스포머의-특징"><a href="#트랜스포머의-특징" class="headerlink" title="트랜스포머의 특징"></a>트랜스포머의 특징</h3><ul><li>RNN 계열은 순서대로만 처리 가능해서 학습 속도가 느림.<br>하지만 트랜스포머는 병렬 처리가 가능…How?  </li><li>Encoder-Decoder 모델을 통해서 병렬 처리<br>Encoder는 input Sequence를 다른 표현으로 치환  </li><li>Decoder에서는 ENcoder으로부터 Output Sequence를 하나씩 생성  </li><li>각각 step에서 다음 symbol을 만들 때 이전에 만들어진 output을 쓴다.(자기 회귀적인 특성)  </li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
+      
+      
+      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
+      
+      <category domain="https://ikarus-999.github.io/tags/DL/">DL</category>
+      
+      
+      <comments>https://ikarus-999.github.io/2021/07/15/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>게임개발-일기2</title>
@@ -24,7 +58,7 @@
       <guid>https://ikarus-999.github.io/2021/06/20/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B02/</guid>
       <pubDate>Sat, 19 Jun 2021 23:28:46 GMT</pubDate>
       
-      <description>게임 개발-2
+      <description>게임 개발 2번째 포스트
  데이터 샘플링 방법에 관한 스터디
 https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-precision-of-a-frequency-of-60hz-with-unity3d.442160/
 
@@ -32,13 +66,11 @@ https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-p
 약간 더 정확한 방법 : Realtime 타이머를 만들어서 Multi-Thread locking을 사용(타이머와 샘플링 로직을 스레드별로 분리) 
 
  두둥~ 드. 디. 어 데이터 추출!!
-앗…!
-
-원래 </description>
+앗…</description>
       
       
       
-      <content:encoded><![CDATA[<h2 id="게임-개발-2"><a href="#게임-개발-2" class="headerlink" title="게임 개발-2"></a>게임 개발-2</h2><p>  데이터 샘플링 방법에 관한 스터디<br>  <a href="https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-precision-of-a-frequency-of-60hz-with-unity3d.442160/">https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-precision-of-a-frequency-of-60hz-with-unity3d.442160/</a></p><p>  간단한 방법 : FixedUpdate 설정<br>  약간 더 정확한 방법 : Realtime 타이머를 만들어서 Multi-Thread locking을 사용(타이머와 샘플링 로직을 스레드별로 분리) </p><p>  두둥~ 드. 디. 어 데이터 추출!!<br>  앗…!</p><h3 id="원래-데이터"><a href="#원래-데이터" class="headerlink" title="원래 데이터"></a>원래 데이터</h3><p>  <img src="/2021/06/20/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B02/%EC%95%88%EB%93%9C%EC%84%BC%EC%84%9C%EC%83%98%ED%94%8C%EB%A7%81_%EC%A4%91%EB%B3%B5.png" alt="샘플링 데이터">  </p><ul><li>하지만 뭔가 비약했었다. 샘플링한 디바이스 센서 값들이 중복이 있었다.<br>그냥 Input.accel.y 단순히 이렇게 샘플링하면 초당 프레임 레이트가 저하되고 데이터가<br>밀리거나 싱크가 어긋나서 많은 데이터 중복이 발생한다.  <blockquote><p>일반적인 텍스트 크롤링보다 구현 난이도 높은 편.  </p></blockquote></li></ul><h3 id="개선된-데이터"><a href="#개선된-데이터" class="headerlink" title="개선된 데이터"></a>개선된 데이터</h3><p>  <img src="/2021/06/20/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B02/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C_%EC%84%BC%EC%84%9C%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%83%98%ED%94%8C%EB%A7%81.png" alt="샘플링 데이터2">  </p><ul><li>멀티스레드로 타이머 로직을 만들어 샘플링한 데이터다. 약간 보기 좋고 깔끔하다.<br>다행히 데이터 중복현상도 거의 없어졌다.  유니티 프로젝트 셋팅만 건들면 더 좋아질 것 같다.  <blockquote><p>시간은 Audio Source 속성의 playtime이 아닌 TimeStep 개념으로 접근해야 데이터 샘플링이 더욱 수월하다.  </p></blockquote></li></ul><h3 id="과연-어디에-쓰이는-데이터일까"><a href="#과연-어디에-쓰이는-데이터일까" class="headerlink" title="과연 어디에 쓰이는 데이터일까?"></a>과연 어디에 쓰이는 데이터일까?</h3><ul><li>Anomaly Event Detection, Game Play Pattern Construction에도 쓰이는 데이터이다.<br>이벤트 감지에 활용할 목적.  </li><li>데이터 학습할때 절.대.로 데이터 전체를 그대로 넣으면 안된다.<br>분명 메모리 OOM이 날 것이다.<br>저번 포스트에서 나온 개념인<br>Data Windowing를 써야 하는 이유이다.  (<em>Batch size보다 우선.</em>)</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="게임-개발-2번째-포스트"><a href="#게임-개발-2번째-포스트" class="headerlink" title="게임 개발 2번째 포스트"></a>게임 개발 2번째 포스트</h2><p>  데이터 샘플링 방법에 관한 스터디<br>  <a href="https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-precision-of-a-frequency-of-60hz-with-unity3d.442160/">https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-precision-of-a-frequency-of-60hz-with-unity3d.442160/</a></p><p>  간단한 방법 : FixedUpdate 설정<br>  약간 더 정확한 방법 : Realtime 타이머를 만들어서 Multi-Thread locking을 사용(타이머와 샘플링 로직을 스레드별로 분리) </p><p>  두둥~ 드. 디. 어 데이터 추출!!<br>  앗…!</p><h3 id="원래-데이터"><a href="#원래-데이터" class="headerlink" title="원래 데이터"></a>원래 데이터</h3><p>  <img src="/2021/06/20/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B02/%EC%95%88%EB%93%9C%EC%84%BC%EC%84%9C%EC%83%98%ED%94%8C%EB%A7%81_%EC%A4%91%EB%B3%B5.png" alt="샘플링 데이터">  </p><ul><li>하지만 뭔가 비약했었다. 샘플링한 디바이스 센서 값들이 중복이 있었다.<br>그냥 Input.accel.y 단순히 이렇게 샘플링하면 초당 프레임 레이트가 저하되고 데이터가<br>밀리거나 싱크가 어긋나서 많은 데이터 중복이 발생한다.  <blockquote><p>일반적인 텍스트 크롤링보다 구현 난이도 높은 편.  </p></blockquote></li></ul><h3 id="개선된-데이터"><a href="#개선된-데이터" class="headerlink" title="개선된 데이터"></a>개선된 데이터</h3><p>  <img src="/2021/06/20/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B02/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C_%EC%84%BC%EC%84%9C%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%83%98%ED%94%8C%EB%A7%81.png" alt="샘플링 데이터2">  </p><ul><li>멀티스레드로 타이머 로직을 만들어 샘플링한 데이터다. 약간 보기 좋고 깔끔하다.<br>다행히 데이터 중복현상도 거의 없어졌다.  유니티 프로젝트 셋팅만 건들면 더 좋아질 것 같다.  <blockquote><p>시간은 Audio Source 속성의 playtime이 아닌 TimeStep 개념으로 접근해야 데이터 샘플링이 더욱 수월하다.  </p></blockquote></li></ul><h3 id="과연-어디에-쓰이는-데이터일까"><a href="#과연-어디에-쓰이는-데이터일까" class="headerlink" title="과연 어디에 쓰이는 데이터일까?"></a>과연 어디에 쓰이는 데이터일까?</h3><ul><li>Anomaly Event Detection, Game Play Pattern Construction(Audio Dynamics …)에도 쓰이는 데이터이다.<br>이벤트 감지에 활용할 목적.  </li><li>데이터 학습할때 절.대.로 데이터 전체를 그대로 넣으면 안된다.<br>분명 메모리 OOM이 날 것이다.<br>저번 포스트에서 나온 개념인<br>Data Windowing를 써야 하는 이유이다.  (<em>Batch size보다 우선.</em>)</li></ul>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/Game/">Game</category>
@@ -66,13 +98,14 @@ https://forum.unity.com/threads/solved-how-to-sample-transform-position-with-a-p
 앱 최적화 시도
 StreanWriter에 WriteLine을 써서 로깅을 하게된다면
 일반적인 File.CreateText에 비해서 리소스를 겁나게(!) 많이 먹는 현상이 발생한다.
+계속 버퍼가 열려 있으면 오버헤드가 나기 십상이기 때문이다.
 단순한 데이터일 경우에는 단순한 라이브러리를 써야 한다.
 그렇지 않으면 리소스 소모 급증과 엄청난 메모리 사고가 발생한다.
-리소스 소모량 급증을 막기 위해서는 StreamWriter 대신 문자열을 계속 더해주는 String</description>
+리소스 소모량 급증을 막기 위해서는 S</description>
       
       
       
-      <content:encoded><![CDATA[<h2 id="게임개발-일기-1일차"><a href="#게임개발-일기-1일차" class="headerlink" title="게임개발 일기 1일차"></a>게임개발 일기 1일차</h2><p>데이터를 모으기 위한 Android 앱 만들기<br>앱을 최적화하려면 라이브러리 특성, 자료 구조를 알아야 가능.  </p><h3 id="앱-최적화-시도"><a href="#앱-최적화-시도" class="headerlink" title="앱 최적화 시도"></a>앱 최적화 시도</h3><p>StreanWriter에 WriteLine을 써서 로깅을 하게된다면<br>일반적인 File.CreateText에 비해서 리소스를 겁나게(!) 많이 먹는 현상이 발생한다.<br>단순한 데이터일 경우에는 단순한 라이브러리를 써야 한다.<br>그렇지 않으면 리소스 소모 급증과 엄청난 메모리 사고가 발생한다.<br>리소스 소모량 급증을 막기 위해서는 StreamWriter 대신 문자열을 계속   더해주는 StringBuilder를 사용하자.  </p><h3 id="라이브러리-하나만-바꿨을-뿐인데…"><a href="#라이브러리-하나만-바꿨을-뿐인데…" class="headerlink" title="라이브러리 하나만 바꿨을 뿐인데…"></a>라이브러리 하나만 바꿨을 뿐인데…</h3><p><img src="/2021/06/17/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B0/%EC%B5%9C%EC%A0%81%ED%99%94_%EC%9D%B4%ED%9B%84.png" alt="최적화 예시"><br>최적화 이후에는 예전보다 cpu 점유 시간이 엄청나게 개선되었다.</p><p>그 이전에는 엄청난 렉, 끊김 크리티컬.<br>(update 함수에 WriteLine을 쓰게되면<br> 화면 프레임이 초당 10프레임으로 낮아지고 렉, 싱크 어긋남 크리티컬.)</p><h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>API 문서를 일단 보면서 각 함수의 특징을 잘 알고 코딩을 해야 한다.<br>로직은 최대한 단순화(여러 가지 변수를 컨트롤 하려면 GameManager를 두는 방법)  </p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="게임개발-일기-1일차"><a href="#게임개발-일기-1일차" class="headerlink" title="게임개발 일기 1일차"></a>게임개발 일기 1일차</h2><p>데이터를 모으기 위한 Android 앱 만들기<br>앱을 최적화하려면 라이브러리 특성, 자료 구조를 알아야 가능.  </p><h3 id="앱-최적화-시도"><a href="#앱-최적화-시도" class="headerlink" title="앱 최적화 시도"></a>앱 최적화 시도</h3><p>StreanWriter에 WriteLine을 써서 로깅을 하게된다면<br>일반적인 File.CreateText에 비해서 리소스를 겁나게(!) 많이 먹는 현상이 발생한다.<br>계속 버퍼가 열려 있으면 오버헤드가 나기 십상이기 때문이다.<br>단순한 데이터일 경우에는 단순한 라이브러리를 써야 한다.<br>그렇지 않으면 리소스 소모 급증과 엄청난 메모리 사고가 발생한다.<br>리소스 소모량 급증을 막기 위해서는 StreamWriter 대신 문자열을 계속   더해주는 StringBuilder를 사용하자.  </p><h3 id="라이브러리-하나만-바꿨을-뿐인데…"><a href="#라이브러리-하나만-바꿨을-뿐인데…" class="headerlink" title="라이브러리 하나만 바꿨을 뿐인데…"></a>라이브러리 하나만 바꿨을 뿐인데…</h3><p><img src="/2021/06/17/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EA%B8%B0/%EC%B5%9C%EC%A0%81%ED%99%94_%EC%9D%B4%ED%9B%84.png" alt="최적화 예시"><br>최적화 이후에는 예전보다 cpu 점유 시간이 엄청나게 개선되었다.</p><p>그 이전에는 엄청난 렉, 끊김 크리티컬.<br>(update 함수에 WriteLine을 쓰게되면<br> 화면 프레임이 초당 10프레임으로 낮아지고 렉, 싱크 어긋남 크리티컬.)</p><h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>API 문서를 일단 보면서 각 함수의 특징을 잘 알고 코딩을 해야 한다.<br>로직은 최대한 단순화(여러 가지 변수를 컨트롤 하려면 GameManager를 두는 방법)  </p>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/Game/">Game</category>
@@ -105,16 +138,14 @@ Setter : 해당 함수를 통해서 값을 설정하는 함수
 
  * 특히 파이썬에서는 자주 있는 일이다.
    정말 대환장 페스티벌이다. 어디서 꼬였는지 찾기도 힘들다.
-   다른 함수에서 주요 변수를 조작하기 때문이다.
-
- 1. Getter 예제 (C#)
-    
-    1
-</description>
+   다른 함수에서 주요 변수를 조작하기 때문이다. 
+   
+   
+ * 쉽게 말하면 은행에 있는 돈은 인가</description>
       
       
       
-      <content:encoded><![CDATA[<h2 id="코딩-국룰"><a href="#코딩-국룰" class="headerlink" title="코딩 국룰"></a>코딩 국룰</h2><p>  C++, C#, java에서는 getter, setter<br>  Python에서는 변수를 더블 언더스코어(__)로 접근함.</p><h3 id="Getter-Setter"><a href="#Getter-Setter" class="headerlink" title="Getter, Setter?"></a>Getter, Setter?</h3><p>  Getter : 해당 함수를 통해서 값을 얻는 함수<br>  Setter : 해당 함수를 통해서 값을 설정하는 함수</p><p>  만약 모든 변수들을 public으로 한다면??  </p><ul><li>특히 파이썬에서는 자주 있는 일이다.<br>정말 대환장 페스티벌이다. 어디서 꼬였는지 찾기도 힘들다.<br>다른 함수에서 주요 변수를 조작하기 때문이다.</li></ul><ol><li><p>Getter 예제 (C#)</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">GetLevel</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Setter 예제</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetLevel</span>(<span class="params"><span class="built_in">int</span> Level</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.Level = Level</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="코딩-국룰"><a href="#코딩-국룰" class="headerlink" title="코딩 국룰"></a>코딩 국룰</h2><p>  C++, C#, java에서는 getter, setter<br>  Python에서는 변수를 더블 언더스코어(__)로 접근함.</p><h3 id="Getter-Setter"><a href="#Getter-Setter" class="headerlink" title="Getter, Setter?"></a>Getter, Setter?</h3><p>  Getter : 해당 함수를 통해서 값을 얻는 함수<br>  Setter : 해당 함수를 통해서 값을 설정하는 함수</p><p>  만약 모든 변수들을 public으로 한다면??  </p><ul><li><p>특히 파이썬에서는 자주 있는 일이다.<br>정말 대환장 페스티벌이다. 어디서 꼬였는지 찾기도 힘들다.<br>다른 함수에서 주요 변수를 조작하기 때문이다.  </p></li><li><p>쉽게 말하면 은행에 있는 돈은 인가자만 취급가능하다.<br>입출금도 정해진 방법(함수)로만 핸들링 되어야 한다.<br>은행에서 돈을 인출할 때는 Getter로 꺼내고 Setter로 돈을 맡기는 원리이다.<br>private 변수를 함수를 통해 조작해야 할 일이 있는데 그것이 Getter, Setter이다. </p></li></ul><ol><li><p>Getter 예제 (C#)</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> Level;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">GetLevel</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Setter 예제</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetLevel</span>(<span class="params"><span class="built_in">int</span> Level</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.Level = Level</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content:encoded>
       
       
       <category domain="https://ikarus-999.github.io/categories/coding/">coding</category>
@@ -902,53 +933,6 @@ Convolution
       
       
       <comments>https://ikarus-999.github.io/2020/11/23/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9E%85%EB%AC%B8%EA%B3%BC-%EC%A4%80%EB%B9%843/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>TF2</title>
-      <link>https://ikarus-999.github.io/2020/11/22/TF2/</link>
-      <guid>https://ikarus-999.github.io/2020/11/22/TF2/</guid>
-      <pubDate>Sun, 22 Nov 2020 10:56:34 GMT</pubDate>
-      
-      <description>Tensorflow 2.x 사용법
-Tensor 생성
- * tf.constant() : list, tuple, Array 를 Tensor로 바꿈
-   
-   
- * tensor = tf.constant(arr)
-   
-   
- * tensor.dtype : 데이터 타입 확인
-   
-   
- * tf.cast(tensor, dtype=tf.uint8) : TF int8로 데이터타입 바꾸기
-   
-   
-   
- * tensor.numpy() : numpy array로 바꾸기
-   
-   
-
-Tensor에 랜덤한 숫자들 생성
- * num</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Tensorflow-2-x-사용법"><a href="#Tensorflow-2-x-사용법" class="headerlink" title="Tensorflow 2.x 사용법"></a>Tensorflow 2.x 사용법</h2><h3 id="Tensor-생성"><a href="#Tensor-생성" class="headerlink" title="Tensor 생성"></a>Tensor 생성</h3><ul><li><p>tf.constant() : list, tuple, Array 를 Tensor로 바꿈</p></li><li><p>tensor = tf.constant(arr)</p></li><li><p>tensor.dtype : 데이터 타입 확인</p></li><li><p>tf.cast(tensor, dtype=tf.uint8) : TF int8로 데이터타입 바꾸기<br><img src="/2020/11/22/TF2/lect_2.PNG" alt="cast사용법"></p></li><li><p>tensor.numpy() : numpy array로 바꾸기</p></li></ul><h3 id="Tensor에-랜덤한-숫자들-생성"><a href="#Tensor에-랜덤한-숫자들-생성" class="headerlink" title="Tensor에 랜덤한 숫자들 생성"></a>Tensor에 랜덤한 숫자들 생성</h3><ul><li>numpy에서는 기본적인 normal distribution 생성<br>np.random.randn(9) : 9개의 불연속적이며 일정한 분포 난수 생성</li></ul><p>Distribution에 따른 난수 생성</p><ul><li><p>tf.random.normal<br>중심극한 이론에 의한 연속적인 모양</p></li><li><p>tf.random.uniform<br>불연속적이며 일정한 분포</p></li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://ikarus-999.github.io/categories/Machine-Learning/">Machine Learning</category>
-      
-      
-      <category domain="https://ikarus-999.github.io/tags/ML/">ML</category>
-      
-      <category domain="https://ikarus-999.github.io/tags/Tensorflow2/">Tensorflow2</category>
-      
-      <category domain="https://ikarus-999.github.io/tags/TF2/">TF2</category>
-      
-      
-      <comments>https://ikarus-999.github.io/2020/11/22/TF2/#disqus_thread</comments>
       
     </item>
     
